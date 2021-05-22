@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div>
+    <div class="one">
+        <img src="./fold/tttt.jpg" alt="">
+        <button class="btsBtn">click</button>
+    </div>
+
+    <div>
+        <h3>하지만 이 예제는 쓸모없음!</h3>
+        <ul class="slideShow">
+            <li><img src="./img/homme1.jpg" alt=""></li>
+            <li><img src="./img/homme2.jpg" alt=""></li>
+            <li><img src="./img/homme3.jpg" alt=""></li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+    // var contentDIV = $('.one'),
+    //     cjBTN = contentDIV.find('button');
+
+    // cjBTN.on('click', function(){
+    //     contentDIV.toggleClass('open');
+    //     if(contentDIV.hasClass('open')){
+    //         console.log("참");
+    //         //cjBTN.text("dsdsds");
+    //         contentDIV.find('img').attr('src','./fold/ssss.jpg');
+    //     } else {
+    //         console.log("거짓");
+    //         //cjBTN.text("sssssssssss");
+    //         contentDIV.find('img').attr('src','./fold/tttt.jpg');
+    //     };
+    // });
+    //////////////////////////////////////////////////
+
+    var cjSlide = $('.slideShow li'),
+        cjSlideCount = cjSlide.length,
+        cjCurrnetIndex = 0;
+
+    cjSlide.eq(cjCurrnetIndex).fadeIn();
+
+    var timer = setInterval(showNextSlide, 2000);
+    
+
+    function showNextSlide() {
+        var nextIndex = (cjCurrnetIndex + 1) % cjSlideCount;
+
+        cjSlide.eq(cjCurrnetIndex).fadeOut();
+        cjSlide.eq(nextIndex).fadeIn();
+        cjCurrnetIndex = nextIndex; //초기에는 0이였는데 nextIndex가 증가되는 변수 값이기 때문에 cjCurrnetIndex값으로 변환하라
+        console.log(cjCurrnetIndex);
+    };
+        
+
+    function timerOn() {
+        setInterval(showNextSlide, 2000);
+    }
+
+    function timerOff() {
+        clearInterval(timer);
+    }
+
+    // cjSlide.on('mouseover', function(){
+    //     timerOff()
+    //     console.log("멈춰라");
+    // })
+    // .on('mouseout', function(){
+    //     timerOn()
+    //     console.log("시작해");
+    // });
+
+    cjSlide.on({
+        'mouseover': function() {
+            timerOff()
+            console.log("멈춰라");
+        },
+        'mouseout': function() {
+            timerOn()
+            console.log("시작해");
+        }
+    });
+
+});
+</script>
+</body>
+</html>
