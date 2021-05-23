@@ -16,6 +16,8 @@
             <a href=""><img src="./img/wedding.jpg" alt=""></a>
             <a href=""><img src="./img/homme2.jpg" alt=""></a>
             <a href=""><img src="./img/homme3.jpg" alt=""></a>
+            <a href=""><img src="./img/wedding.jpg" alt=""></a>
+            <a href=""><img src="./img/homme2.jpg" alt=""></a>
         </div>
         <div class="slideshow_nav">
             <a href="" class="prev">prev</a>
@@ -44,11 +46,12 @@ $(function(){
         indicatorHtml = '',
         currentIndex = 0,
         duration = 500,
-        easing = 'easeInOutExpo',
+        //easing = 'easeInOutExpo',
         interval = 2000,
         timer;
 
     //console.log(slides);
+    //슬라이드의 개수별로 도트 생성하기
     slides.each(function(i){
         var newLeft = i * 100 + '%';
         $(this).css({left: newLeft });
@@ -56,8 +59,76 @@ $(function(){
         indicatorHtml += '<a href="">'+ (i+1) + '</a>';
         //console.log(indicatorHtml);
     });
-
     indicator.html(indicatorHtml);
+
+    //슬라이드 이동 함수
+    function gotoSlide(index){
+        var slideLeft = -100*index + '%';
+        slideGroup.animate({left:slideLeft}, duration);
+        currentIndex = index;
+        //console.log(currentIndex); //좌우, 도트까지 확인됨
+        updateNav();//처음인지, 마지막인지 검사. active
+    }
+    function updateNav() {
+        var navPrev = nav.find('.prev');
+        var navNext = nav.find('.next');
+        //처음 currentIndex은 0 이고 이전버튼 안보이게
+        if(currentIndex == 0){
+            navPrev.addClass('disabled');
+        } else {
+            navPrev.removeClass('disabled');
+        }
+
+        //마지막 currentIndex은 2 이고 다음버튼 안보이게
+        if(currentIndex == slidesCount - 1){ //
+            navNext.addClass('disabled');
+        } else {
+            navNext.removeClass('disabled');
+        }
+        
+        //1번 방법
+        // indicator.find('a').removeClass('active');
+        // indicator.find('a').eq(currentIndex).addClass('active');
+        //모든 요소에서 active 빼고 원하는 요소에만 active 추가
+        
+        //2번 방법
+        //siblings 는 선택된것만 빼고 형제들은 모두
+        indicator.find('a').eq(currentIndex).addClass('active').siblings().removeClass('active');
+    }
+    //gotoSlide(3);
+
+    //인티케이터(도트 이동)이동하기
+    indicator.find('a').on('click', function(e){
+        e.preventDefault();//a태그에 있는 고유의 이벤트(e)를 막는다(링크 이벤트).
+        var idx = $(this).index();
+        //var $this = $(this)
+        gotoSlide(idx);
+        //console.log(idx); //도트로만 조작되는게 확인됨
+    });
+
+    //조우 버튼으로 이동
+    // nav.find('.prev').on('click', function(e){
+    //     e.preventDefault();
+    //     //var i = currentIndex - 1
+    //     gotoSlide(currentIndex - 1);
+    // });
+    // nav.find('.next').on('click', function(e){
+    //     e.preventDefault();
+    //     //var i = currentIndex + 1
+    //     gotoSlide(currentIndex + 1);
+    // });
+    nav.find('a').on('click', function(e){
+        e.preventDefault();
+        //var i = currentIndex - 1
+        // if($(this).hasClass('prev')) {
+        //     gotoSlide(currentIndex - 1);
+        // } else {
+        //     gotoSlide(currentIndex + 1);
+        // }
+        $(this).hasClass('prev') ? gotoSlide(currentIndex - 1) : gotoSlide(currentIndex + 1);
+        
+    });
+    updateNav(); // 맨밑에 들어간 이유는 이 함수가 단독으로 마지막에서 다시 실행되라
 });
 </script>
 </body>

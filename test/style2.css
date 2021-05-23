@@ -39,6 +39,9 @@
 .slideshow_nav a.next {
     margin-left: 409px;
 }
+.slideshow_nav a.disabled {
+    display: none;
+}
 .indicator {
     position: absolute;
     bottom: 20px;

@@ -27,21 +27,21 @@
 
 <script type="text/javascript">
 $(function(){
-    // var contentDIV = $('.one'),
-    //     cjBTN = contentDIV.find('button');
+    var contentDIV = $('.one'),
+        cjBTN = contentDIV.find('button');
 
-    // cjBTN.on('click', function(){
-    //     contentDIV.toggleClass('open');
-    //     if(contentDIV.hasClass('open')){
-    //         console.log("참");
-    //         //cjBTN.text("dsdsds");
-    //         contentDIV.find('img').attr('src','./fold/ssss.jpg');
-    //     } else {
-    //         console.log("거짓");
-    //         //cjBTN.text("sssssssssss");
-    //         contentDIV.find('img').attr('src','./fold/tttt.jpg');
-    //     };
-    // });
+    cjBTN.on('click', function(){
+        contentDIV.toggleClass('open');
+        if(contentDIV.hasClass('open')){
+            console.log("참");
+            //cjBTN.text("dsdsds");
+            contentDIV.find('img').attr('src','./fold/ssss.jpg');
+        } else {
+            console.log("거짓");
+            //cjBTN.text("sssssssssss");
+            contentDIV.find('img').attr('src','./fold/tttt.jpg');
+        };
+    });
     //////////////////////////////////////////////////
 
     var cjSlide = $('.slideShow li'),
