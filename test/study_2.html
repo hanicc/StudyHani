@@ -94,6 +94,12 @@ $(function(){
         //2번 방법
         //siblings 는 선택된것만 빼고 형제들은 모두
         indicator.find('a').eq(currentIndex).addClass('active').siblings().removeClass('active');
+
+        // if($(this).length() == indicator.find('a').eq(currentIndex)){
+        //     indicator.find('a').addClass('active');
+        // }else {
+        //     indicator.find('a').removeClass('active');
+        // }
     }
     //gotoSlide(3);
 
@@ -129,6 +135,7 @@ $(function(){
         
     });
     updateNav(); // 맨밑에 들어간 이유는 이 함수가 단독으로 마지막에서 다시 실행되라
+    gotoSlide(2);
 });
 </script>
 </body>

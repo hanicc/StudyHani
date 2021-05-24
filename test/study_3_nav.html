@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="./style3.css">
+</head>
+<body>
+
+<div>
+    <div class="page-haeder">
+        <div class="">
+            <a href="">ssss</a>
+            <a href="">ssss</a>
+            <a href="">ssss</a>
+            <a href="">ssss</a>
+            <a href="">ssss</a>
+            <a href="">ssss</a>
+        </div>
+    </div><!--slideShow-->
+
+    <div class="indicator">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque fugit maxime iusto, blanditiis impedit quasi, quisquam enim incidunt, earum voluptatum saepe sit repellendus quaerat. Vitae alias quas voluptate aliquam ab?
+        Lorem, ipsum dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sit dignissimos deserunt ipsam maxime ipsa quod enim reiciendis esse, provident dolor iste est iure aspernatur ducimus porro aut blanditiis excepturi pariatur deleniti libero officiis beatae. Debitis quia consectetur, odio, soluta suscipit atque, deserunt eveniet alias eligendi blanditiis hic repellendus asperiores. In, labore! Delectus quia sunt necessitatibus asperiores reiciendis vel et molestias? Tenetur, doloribus dolore culpa repudiandae at, tempora id voluptatibus ullam reiciendis voluptas ipsam ut porro, quam odio minus consequatur odit rem ea rerum. Architecto, dicta animi. Totam nulla fuga, est dolore molestias, unde aut, adipisci deserunt hic cumque non!
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+    var wind = $(window),
+        header = $('.page-haeder'),
+        headerOffsetTop = header.offset().top;
+
+        console.log(headerOffsetTop);
+
+        wind.scroll(function(){
+            if(wind.scrollTop() >= headerOffsetTop){
+                header.addClass('stick');
+            }else{
+                header.removeClass('stick');
+            }
+        })
+});
+</script>
+</body>
+</html>

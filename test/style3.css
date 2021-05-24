@@ -1,0 +1,49 @@
+*{margin: 0; padding: 0;}
+.page-haeder {
+    width: 100%;
+    background-color: #ccc;
+    position: absolute;
+    top: 300px;
+    left: 0;
+}
+.page-haeder.stick {
+    position: fixed;
+    top: 0;
+}
+/* 마크업 없는 복사본 */
+.page-header-clone {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: -45px;
+    width: 100%;
+    -webkit-transition: top 0.25s;
+    transition: top 0.25s;
+}
+.page-header-clone.visible {
+    top: 0;
+}
+.inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.inner h1 {
+        
+}
+.inner .primary-nav {
+    
+}
+.inner .primary-nav ul {
+    display: flex;
+}
+.inner .primary-nav ul li {
+    display: flex;
+    margin: 0 5px;
+}
+
+.indicator {
+    padding: 300px 0 100px 0;
+    width: 500px;
+    height: 2000px;
+}
