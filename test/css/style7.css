@@ -16,13 +16,21 @@ body { background: #545454; }
 #email {width:100%; height:700px;background:#FFE200; }
 
 
+.section {
+    max-width: 900px;
+    margin: 0 auto;
+    height: 800px;
+    border: 1px solid #ccc;
+    padding: 0 15px;
+    position: relative;
+}
 .roading {
     background-color: #fff;
     padding: 20px;
 }
 .progress-bar {
     position: relative;
-    width: 900px;
+    width: 100%;
     height: 30px;
     margin: 3em auto;
     border: 1px solid rgb(130, 245, 130);

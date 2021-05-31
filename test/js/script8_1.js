@@ -36,7 +36,7 @@ $(function(){
         duration: 2500,
         progress: function(){
             var now = this.rate;
-            pogressText.text(Math.ceil(now)+'%') //Math.ceil 소수점 없애고 반올림
+            pogressText.text(Math.ceil(now)+'%')
         }
     });
     
