@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<script type="text/javascript">
+$(function(){
+    $.getJSON('파일경로 추츨해서 (data)로 받아온다', function(data){
+        var $minTemp = data.list[0].main.temp_min;
+        /*
+            "cod":"200",
+            "sds":asf,
+            "list":[
+                {
+                    "da":222,
+                    "dsee":ssss,
+                    "main":{
+                        "temp_min": 얍얍
+                    }
+                }
+            ]
+        */
+        var $test1 = $('.test1');
+        $test1.append($minTemp);
+        
+        //이미지를 불러오는것
+        var $wIcon = data.list[0].weather[0].icon;
+        var $test4 = $('.test4');
+        $test4.append('<img src="https://test.com/img/w/' + $wIcon + ',png" alt="">')
+    });
+});
+</script>
+<div>
+    <h1>제이슨</h1>
+    <div class="test1">현재 온도: {그럼 여기에 $minTemp값을 출력된다.}</div>
+    <div class="test2">현재 온도: </div>
+    <div class="test3">현재 온도: </div>
+    <div class="test4">현재 날씨 아이콘: {여기에는 이미지 불러오는거} </div>
+    
+</div>
+
+
+</body>
+</html>
