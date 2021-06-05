@@ -1,0 +1,17 @@
+*{margin: 0; padding: 0;}
+.slideShow {position: relative;}
+.slideShow li {
+    width: 400px;
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+.slideShow li:first-child {
+    display: inline;
+}
+.slideShow li img {
+    width: 100%;
+}
