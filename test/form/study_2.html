@@ -25,11 +25,11 @@
                 <input type="text" class="email_name" value=""> @
                 <input type="text" class="email_domain" value="">
                 <select class="select_domain">
+                    <option value="">직접입력</option>
                     <option value="daum.net">daum</option>
                     <option value="naver.com">naver</option>
                     <option value="gmail.com">gmail</option>
                     <option value="yahoo.com">yahoo</option>
-                    <option value="">직접입력</option>
                 </select>
             </p>
         </fieldset>
@@ -37,7 +37,10 @@
             <legend>주문정보</legend>
             <p>
                 <span>i pad mini 64GB</span>
-                <span class="unitprice number">400000</span>원
+                <!--방법 기본-->
+                <!-- <span class="unitprice number">400000</span>원 -->
+                <!--방법 1-->
+                <span class="unitprice number" data-unitprice="400000">400,000</span>원
                 <span>
                     <a href="#" id="minus"> - </a> / 
                     <a href="#" id="plus" class="plus"> + </a>
@@ -45,7 +48,7 @@
                 </span>
                 합계 : 
                 <span class="total number">
-                    400000
+                    400,000
                 </span>원
             </p>
             <p>
