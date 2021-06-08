@@ -1,0 +1,32 @@
+*{margin: 0; padding: 0;}
+.input-group {
+    width: 340px;
+    margin: 50px auto;
+    position: relative;
+}
+input {
+    border: 0;
+    border-bottom: 1px solid #888;
+    font-size: 20px;
+    display: block;
+}
+input:focus {
+    outline: none;
+    border-bottom-width: 4px;
+    border-color: #48f;
+    transition: 0.5s;
+}
+label {
+    position: absolute;
+    color: #aaa;
+    left: 0%;
+    top: 0;
+    opacity: 0;
+    visibility: hidden; /*가려지게 하는것*/
+    transition: 0.5s;
+}
+.label-top {
+    top: -20px;
+    opacity: 1;
+    visibility: visible;
+}
