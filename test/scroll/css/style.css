@@ -1,0 +1,28 @@
+* {margin:0; padding:0;}
+section {
+    height: 500px;
+}
+section:nth-of-type(even){
+    background: #ccc;
+}
+.target {
+    width: 500px;
+    margin: 0 auto;
+    padding-bottom: 300px;
+}
+.target .content {
+    position: relative;
+    top: auto;
+    width: 100%;
+    background-color: #3498db;
+    color:#fff;
+    text-align: center;
+    height: 100px;
+}
+.target.active .content {
+    position: fixed;
+    top: 400px;
+    width: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+}
