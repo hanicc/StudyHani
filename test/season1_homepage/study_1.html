@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<div>
+    <div class="one">
+        <img src="./fold/tttt.jpg" alt="">
+        <button class="btsBtn">click</button>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+    
+    var this_Url = location.href;
+
+    console.log(this_Url);
+    if (!this_Url) {
+        console.log("--------Y---------")
+    } else {
+        console.log("--------N---------")
+    }
+    
+
+});
+</script>
+</body>
+</html>
