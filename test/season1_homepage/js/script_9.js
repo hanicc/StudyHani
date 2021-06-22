@@ -68,11 +68,9 @@ $(function(){
     });
     $('.video .close').on('click', function(e){
         e.preventDefault();
-        currentUrl = $('iframe').attr('src');
         $('#overlay').removeClass('visible');
 
-        var newUrl2 = currentUrl.replace('?autoplay=1&mute=1','');
-        $('iframe').attr('src',newUrl2);
+        $('iframe').attr('src',currentUrl);
         
         
     });
