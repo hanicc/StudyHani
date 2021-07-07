@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="./css/style3.css">
+    <!-- <script src="./js/script.js"></script> -->
+</head>
+<body>
+
+<div>
+    <div class="img-bg-blur"></div>
+    <div class="img-bg"></div>
+
+    <div class="well well-form">
+        <h3>Contact Us</h3>
+        <div class="contact-form"><!-- 원래는 form으로 해둬라 테스트 하니깐 센드 돼서 div로 바꿈 -->
+            <div class="form-group">
+                <div class="validation">this field is required</div>
+                <input type="text" class="form-control" id="txtName" />
+            </div>
+            <div class="form-group">
+                <div class="validation">this field is required</div>
+                <input type="text" class="form-control" id="txtEmail" />
+            </div>
+            <div class="form-group">
+                <div class="validation">this field is required</div>
+                <textarea class="form-control"></textarea>
+            </div>
+            <button class="btn btn-block btn-primary" id="btnSubmit">Send</button>
+        </div>
+    </div>
+</div>
+
+<script>
+var $btnSubmit = $('#btnSubmit');
+var $ifelds = $('.form-control');
+var imageURL = "../season1_homepage/img/wedding.jpg";
+
+$btnSubmit.click(function(){
+    //$ifelds 마다 할일, 변수명 $value 값이 없으면 그 요소에 class명  error 추가
+    $ifelds.each(function(){
+        var $value = $(this).val();
+        if($value == ""){ //값이 있으면
+            $(this).addClass('error');
+            $(this).prev().show(300);
+        } else { //값이 없으면
+            $(this).removeClass('error');
+            $(this).prev().hide(300);
+        }
+    }); //each
+
+    var $errorCont = $('.error').length;
+    console.log($errorCont)
+    if($errorCont == 0){
+        $btnSubmit.prop('disabled', true).text('Loading');
+    }
+});
+
+$ifelds.click(function(){
+    $(this).removeClass('error');
+    $(this).prev().hide(300);
+    $btnSubmit.prop('disabled', false).text('SEND');
+});
+
+$(window).load(function(){
+    $('.img-bg').css({'backgroundImage':'url('+ imageURL +')'}).fadeIn(1000);
+});
+
+</script>
+
+</body>
+</html>

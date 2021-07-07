@@ -1,0 +1,51 @@
+*{margin: 0; padding: 0;}
+body { font-family: 'Raleway', sans-serif; }
+
+.well-form {
+    width: 300px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    margin-left: -150px;
+}
+
+.well-form h3 {
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.error {
+    border-color: #f00;
+    box-shadow: 0 0 6px rgba(255,0,0,0.4);
+}
+
+.validation {
+    color: #f00;
+    font-size: 12px;
+    display: none;
+}
+
+.img-bg-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../season1_homepage/img/wedding_s.jpg);
+    background-color: #333;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.img-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-image: url(../../season1_homepage/img/wedding.jpg); */
+    background-color: #333;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
