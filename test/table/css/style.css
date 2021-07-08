@@ -1,0 +1,22 @@
+*{margin: 0; padding: 0;}
+.wrapper {
+    max-width: 100%;
+    overflow: auto;
+}
+.wrapper table {
+    width: 100%;
+}
+td, th {
+	text-align: left;
+	padding: .5rem 1rem;
+}
+
+tbody tr:nth-child(odd) {
+	background-color: #ccc;
+}
+
+@media screen and (max-width:768px){
+    th:last-child, td:last-child {
+        display: none;
+    }
+}
