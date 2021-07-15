@@ -55,8 +55,8 @@ $(function () {
                 get은 반대
             */
         });
-        console.log(elements)
-        $container.append(elements);
+        //console.log(elements)
+        //$container.append(elements);
 
         //$added 값 업데이트가 되어야 한다. 8, 16, 32....
         /*
