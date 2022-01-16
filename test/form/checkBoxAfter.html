@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- <link rel="stylesheet" href="./css/style3.css"> -->
+    <!-- <script src="./js/script.js"></script> -->
+</head>
+<body>
+
+<div>
+    <input type="checkbox" name="NAME" id="checkbox1" />
+</div>
+
+<script>
+$(document).ready(function() {
+
+    var pop_width = '400';
+    var pop_height = '380';
+    // 팝업을 가운데 위치시키기 위해 아래와 같이 값 구하기
+    var pop_left = Math.ceil(( window.screen.width - pop_width )/2);
+    var pop_top = Math.ceil(( window.screen.height - pop_height )/2); 
+
+
+    $("input:checkbox[name='NAME']").change(function() {
+        //윈도우 팝업이 열리고, 아직 체크가 되지 말아라
+        window.open('http://www.naver.com','테스트 팝업','width='+ pop_width +', height='+ pop_height +', left=' + pop_left + ', top='+ pop_top);
+        $(this).prop('checked', false);
+
+        if($(this).is(":checked")) {
+            //var returnVal = confirm("test");
+            //$(this).attr("checked", returnVal);
+            alert("ssss");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
