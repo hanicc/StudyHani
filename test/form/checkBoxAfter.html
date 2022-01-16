@@ -15,6 +15,7 @@
 </div>
 
 <script>
+//검색 jquery window open closed check
 $(document).ready(function() {
 
     var pop_width = '400';
@@ -23,12 +24,38 @@ $(document).ready(function() {
     var pop_left = Math.ceil(( window.screen.width - pop_width )/2);
     var pop_top = Math.ceil(( window.screen.height - pop_height )/2); 
 
+    
+    var winPop; // add in Global    
+
+
 
     $("input:checkbox[name='NAME']").change(function() {
         //윈도우 팝업이 열리고, 아직 체크가 되지 말아라
-        window.open('http://www.naver.com','테스트 팝업','width='+ pop_width +', height='+ pop_height +', left=' + pop_left + ', top='+ pop_top);
+        //window.open('http://www.naver.com','테스트 팝업','width='+ pop_width +', height='+ pop_height +', left=' + pop_left + ', top='+ pop_top);
+
+         /*Added this for to open a browser popup window */ 
+        if(winPop==undefined){
+            var param= 'width='+ pop_width +', height='+ pop_height +', left=' + pop_left + ', top='+ pop_top;
+            winPop=window.open('http://www.naver.com', 'winPop', param);
+        }else{
+            winPop.focus();
+            
+        }
+
         $(this).prop('checked', false);
 
+
+        var timer = setInterval(function() {   
+            if(winPop.closed) {                             
+                clearInterval(timer);  
+                //do your process here
+                alert("Popup Closed");
+                $("input:checkbox[name='NAME']").prop('checked', true);
+            }else{
+                winPop.close();
+            }  
+        }, 1000); 
+        
         if($(this).is(":checked")) {
             //var returnVal = confirm("test");
             //$(this).attr("checked", returnVal);
