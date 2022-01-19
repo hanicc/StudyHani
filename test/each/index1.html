@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<style>
+    #pop{
+        background-color: brown;
+    }
+</style>
+<body>
+<div class="warp">
+    <ul>
+        <li>
+            <input type="checkbox" id="t1" name="t1" value="nav">
+        </li>
+        <li>
+            <input type="checkbox" id="t2" name="t1" value="kko">
+        </li>
+        <li>
+            <input type="checkbox" id="t3" name="t1" value="ggl">
+        </li>
+        <li>
+            <input type="checkbox" id="t4" name="t1" value="t4">
+        </li>
+        <li>
+            <input type="checkbox" id="t5" name="t1" value="t5">
+        </li>
+    </ul>
+
+    <div id="pop" style="display: none;">
+        <!-- <div>
+            <div>제목</div>
+            <p>내용</p>
+        <div> -->
+    </div>
+</div>
+
+<script>
+    var $wrap = $('.warp');
+    var $popup = $('#pop');
+
+
+    //console.log("ssss", data);
+    $('input:checkbox[name="t1"]').on('change',function(){
+        //console.log("ssss", $(this).val());
+        //console.log("zzzz", data.nav)
+
+        var test = $(this).val();
+        var xxxx = ""
+        
+        if(test === "nav") {
+            xxxx = "네이버"
+        }
+        if(test === "kko") {
+            xxxx = "카카오"
+        }
+        if(test === "ggl") {
+            xxxx = "구글"
+        }
+
+        console.log("zzzz", xxxx);
+
+        $popup.show();
+        var innerhtml ='<div>'+
+                        '<div>제목 ' + xxxx + '</div>'+
+                        '<p>내용</p>'+
+                    '</div>';
+
+        $popup.append(innerhtml);
+    });
+</script>
+
+
+</body>
+</html>
