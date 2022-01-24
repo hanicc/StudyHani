@@ -35,11 +35,11 @@ $(function () {
             .each('제이슨 배열 하나하나', function(idx, item)); 제이슨: 배열의 값마다 할일
         */
         $.each(slicedData, function(idx, item){
-            var itemHTML = 
-            '<li class="gallery-item">' +
+            var itemHTML = '<li class="gallery-item">' +
                 '<a href="#">' +
                     '<figure>' +
-                        '<img src="' + item.images.thumb + '" alt="' + item.title + '">' +
+                        // '<img src="' + item.images.thumb + '" alt="' + item.title + '">' +
+                        '<p>' + item.images.thumb + '</p>'+
                         '<figcaption>' +
                             item.title +
                         '</figcaption>' +
@@ -56,7 +56,7 @@ $(function () {
             */
         });
         //console.log(elements)
-        //$container.append(elements);
+        $container.append(elements);
 
         //$added 값 업데이트가 되어야 한다. 8, 16, 32....
         /*
