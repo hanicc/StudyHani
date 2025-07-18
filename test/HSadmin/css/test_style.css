@@ -63,3 +63,15 @@
 /*-------------------------------------------*/
 footer { display: flex; background-color: #454545; justify-content: space-between; padding: 10px 20px; }
 footer p { font-size: 12px; color: #fff; }
+
+
+
+
+.ac_btnCon {}
+.ac_btnCon a,
+.ac_btnCon button { background-color: #666; border: 0; }
+.ac_btnCon a.active,
+.ac_btnCon button.active { background-color: #00108b; color: #fff; }
+.ac_cont {}
+.ac_cont .drop_cont { display: none; }
+.ac_cont.on .drop_cont { display: block; }

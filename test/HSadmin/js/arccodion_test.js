@@ -15,7 +15,7 @@ $(function() {
     const isExternal = (item) => item.external || (item.url && !item.items);
 
     // 메뉴 데이터 로딩
-    $.getJSON('../json/menu.json', function(data) {
+    $.getJSON('./json/menu.json', function(data) {
         menuData = data;
         // setCurrentStateByMenu(menuData[0], 0, 0);
         renderHeaderMenu(menuData);
@@ -167,7 +167,7 @@ $(function() {
         //     $mainCont.find('.inner').load('../main/main.html');
         // }
         // 항상 main.html 불러오기
-        $mainCont.find('.inner').load('../main/main.html');
+        $mainCont.find('.inner').load('./main/main.html');
     }
 
     //헤더 메뉴 렌더링

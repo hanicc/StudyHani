@@ -1,11 +1,96 @@
 <article class="cont_area">
    <h3>메인페이지</h3>
     <section class="main_area">
-        <div class="main_item">item1</div>
+        <div class="main_item">
+
+            <div class="ac_btnCon">
+                <i class="icon"></i>
+                <button type="button" class="ac_btn" data-addOpenCloseTxt="y">아코디언 메뉴 1</button>
+                <!-- <a href="" class="ac_btn">메뉴</a> -->
+            </div>
+
+            <div class="ac_cont">
+                <div class="drop_cont">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt libero, corporis voluptatibus reprehenderit laboriosam iste odit voluptates reiciendis molestiae alias ratione nesciunt enim sed, delectus in mollitia iure nemo voluptatum!</p>
+                </div>
+            </div>
+        </div>
+
         <div class="main_item">item2</div>
-        <div class="main_item">item3</div>
+
+        <div class="main_item">
+            <div class="ac_btnCon">
+                <i class="icon"></i>
+                <a href="" class="ac_btn" data-addOpenCloseTxt="n">accordions메뉴2</a>
+            </div>
+
+            <div class="ac_cont">
+                <div class="drop_cont">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt libero, corporis voluptatibus reprehenderit laboriosam iste odit voluptates reiciendis molestiae alias ratione nesciunt enim sed, delectus in mollitia iure nemo voluptatum!</p>
+                </div>
+            </div>
+        </div>
         <div class="main_item">item4</div>
-        <div class="main_item">item5</div>
+        
+        <div class="main_item">
+            <div class="ac_btnCon">
+                <i class="icon"></i>
+                <button type="button" class="ac_btn" data-addOpenCloseTxt="">메뉴 33</button>
+            </div>
+
+            <div class="ac_cont">
+                <div class="drop_cont">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt libero, corporis voluptatibus reprehenderit laboriosam iste odit voluptatum!</p>
+                </div>
+            </div>
+        </div>
+
         <div class="main_item">item6</div>
     </section>
 </article>
+
+<script>
+let $ac_btnCon = $('.ac_btnCon');
+let $ac_cont = $('.ac_cont');
+
+function updateOpenCloseText($btn, isOpen) {
+    if ($btn.data('addopenclosetxt') === 'y') {
+        let baseText = $btn.data('baseText');
+        
+        console.log("$btn", $btn.data())
+        // console.log("baseText", baseText)
+
+        /*
+            1.한 번만 baseText를 저장하기 위한 장치
+            값이 없을 때만(최초 1회) 텍스트에서 " 열기", " 닫기"를 빼고 저장합니다.
+
+            2.클릭했을땐 $btn.data('baseText')에 버튼 텍스트가 저장됨
+        */
+        // 처음엔 값이 없어서  (!baseText)가 실행됨, if (!baseText) 실행안됨
+        if (!baseText) {
+            baseText = $btn.text().replace(/ 열기| 닫기/g, ''); // 열기" 또는 " 닫기"가 있으면 모두 삭제!
+            $btn.data('baseText', baseText); // 버튼 텍스트에서 열기,닫기를 제거한 값을 baseText변수와 여기에 저장
+        }
+
+        $btn.text(baseText + (isOpen ? ' 닫기' : ' 열기'));
+    }
+}
+
+// ★ 초기화도 같은 함수로!
+$ac_btnCon.find('button, a').each(function(idx){
+    const $btn = $(this);
+    const $cont = $ac_cont.eq(idx);
+    updateOpenCloseText($btn, $cont.hasClass('on'));
+});
+
+$ac_btnCon.find('button, a').on('click', function(e){
+    e.preventDefault();
+    let idx = $ac_btnCon.find('button, a').index(this);
+    let $this = $(this);
+    let $targetContent = $ac_cont.eq(idx);
+
+    $this.toggleClass('active');
+    $targetContent.toggleClass('on');
+    updateOpenCloseText($this, $targetContent.hasClass('on'));
+});
+</script>
