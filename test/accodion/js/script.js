@@ -19,7 +19,7 @@ $(function(){
 
             $(this).siblings(".accordion-content").slideToggle();
             $(this).parent().siblings("li").children(".accordion-content").slideUp();
-            $(this).parent().siblings("li").find(".active").removeClass("active");
+            // $(this).parent().siblings("li").find(".active").removeClass("active");
         });
     });
 });

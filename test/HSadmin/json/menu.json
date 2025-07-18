@@ -1,0 +1,349 @@
+[
+    {
+        "category": "main",
+        "label": "메인",
+        "url": "../main/main.html",
+        "visible": false 
+    },
+    {
+        "category": "과일",
+        "items": [
+        {
+            "title": "사과",
+            "children": [
+                {
+                    "label": "쨈",
+                    "url": "../sub/fruits/fruits1.html",
+                    "external": false
+                },
+                {
+                    "label": "1자식 메뉴 외부링크",
+                    "url": "https://korea.hyosung-tns.com/ko/about-us/design-engineering/",
+                    "external": true
+                },
+                {
+                    "label": "사과파이",
+                    "url": "../sub/fruits/fruits2.html",
+                    "external": false
+                }
+            ]
+        },
+        {
+            "title": "바나나",
+            "children": [
+                {
+                    "label": "222바나나",
+                    "url": "../sub/fruits/fruits3.html",
+                    "external": false
+                },
+                {
+                    "label": "3바나나",
+                    "url": "../sub/fruits/fruits4.html",
+                    "external": false
+                },
+                {
+                    "label": "44바나나",
+                    "url": "../sub/fruits/fruits5.html",
+                    "external": false
+                }
+            ]
+        },
+        {
+            "title": "메론",
+            "children": [
+                {
+                    "label": "1메론",
+                    "url": "../sub/fruits/fruits1.html",
+                    "external": false
+                },
+                {
+                    "label": "2메론",
+                    "url": "../sub/fruits/fruits2.html",
+                    "external": false
+                },
+                {
+                    "label": "3메론",
+                    "url": "../sub/fruits/fruits3.html",
+                    "external": false
+                },
+                {
+                    "label": "37메론",
+                    "url": "../sub/fruits/fruits4.html",
+                    "external": false
+                },
+                {
+                    "label": "32메론",
+                    "url": "../sub/fruits/fruits5.html",
+                    "external": false
+                },
+                {
+                    "label": "34메론",
+                    "url": "../sub/fruits/fruits6.html",
+                    "external": false
+                }
+            ]
+        }]
+    },
+    {
+        "category": "자동차",
+        "items": [
+        {
+            "title": "BMW",
+            "children": [
+                {
+                    "label": "깡통",
+                    "url": "../sub/car/car1.html",
+                    "external": false
+                },
+                {
+                    "label": "에어컨",
+                    "url": "../sub/car/car2.html",
+                    "external": false
+                },
+                {
+                    "label": "도난방지",
+                    "url": "../sub/car/car2.html",
+                    "external": false
+                }
+            ]
+        }]
+    },
+    {
+        "category": "만화",
+        "items": [
+        {
+            "title": "귀멸의 칼날",
+            "children": [
+                {
+                    "label": "이노스케",
+                    "url": "../sub/comic/comic1.html",
+                    "external": false
+                },
+                {
+                    "label": "사신",
+                    "url": "../sub/comic/comic2.html",
+                    "external": false
+                },
+                {
+                    "label": "3자식 메뉴 외부링크",
+                    "url": "https://www.hyosung.com/kr",
+                    "external": true
+                }
+            ]
+        },
+        {
+            "title": "명탐정 코난",
+            "children": [
+                {
+                    "label": "코난",
+                    "url": "../sub/comic/comic1.html",
+                    "external": false
+                },
+                {
+                    "label": "남도일",
+                    "url": "../sub/comic/comic2.html",
+                    "external": false
+                },
+                {
+                    "label": "탐정",
+                    "url": "../sub/comic/comic3.html",
+                    "external": false
+                }
+            ]
+        },
+        {
+            "title": "드래곤볼",
+            "children": [
+                {
+                    "label": "손오공",
+                    "url": "../sub/comic/comic1.html",
+                    "external": false
+                },
+                {
+                    "label": "베지터",
+                    "url": "../sub/comic/comic2.html",
+                    "external": false
+                },
+                {
+                    "label": "피콜로",
+                    "url": "../sub/comic/comic3.html",
+                    "external": false
+                }
+            ]
+        },
+        {
+            "title": "용의아들",
+            "children": [
+                {
+                    "label": "용",
+                    "url": "../sub/comic/comic4.html",
+                    "external": false
+                }
+            ]
+        },
+        {
+            "title": "삼국지",
+            "children": [
+                {
+                    "label": "유비",
+                    "url": "../sub/comic/comic1.html",
+                    "external": false
+                },
+                {
+                    "label": "조조",
+                    "url": "../sub/comic/comic2.html",
+                    "external": false
+                },
+                {
+                    "label": "관우",
+                    "url": "../sub/comic/comic3.html",
+                    "external": false
+                }
+            ]
+        }]
+    },
+    {
+        "category": "커피",
+        "items": [
+        {
+            "title": "아메리카노",
+            "children": [
+                {
+                    "label": "설탕",
+                    "url": "../sub/coffee/coffee.html",
+                    "external": false
+                }
+            ]
+        },
+        {
+            "title": "커피믹스",
+            "children": [
+                {
+                    "label": "모카골드",
+                    "url": "../sub/coffee/coffee.html",
+                    "external": false
+                },
+                {
+                    "label": "화이트골드",
+                    "url": "../sub/coffee/coffee.html",
+                    "external": false
+                },
+                {
+                    "label": "난맥심",
+                    "url": "../sub/coffee/coffee.html",
+                    "external": false
+                }
+            ]
+        }]
+    },
+    {
+        "category": "이탈리아 커피",
+        "items": [
+        {
+            "title": "아메리카노",
+            "children": [
+                {
+                    "label": "설탕",
+                    "url": "../sub/coffee/coffee.html",
+                    "external": false
+                }
+            ]
+        },
+        {
+            "title": "미국 커피믹스",
+            "children": [
+                {
+                    "label": "모카골드",
+                    "url": "../sub/coffee/coffee.html",
+                    "external": false
+                },
+                {
+                    "label": "화이트골드",
+                    "url": "../sub/coffee/coffee.html",
+                    "external": false
+                },
+                {
+                    "label": "난맥심",
+                    "url": "../sub/coffee/coffee.html",
+                    "external": false
+                }
+            ]
+        }]
+    },
+    {
+        "category": "한국 커피",
+        "items": [
+        {
+            "title": "아메리카노",
+            "children": [
+                {
+                    "label": "설탕",
+                    "url": "../sub/coffee/coffee.html",
+                    "external": false
+                }
+            ]
+        },
+        {
+            "title": "커피믹스",
+            "children": [
+                {
+                    "label": "모카골드",
+                    "url": "../sub/coffee/coffee.html",
+                    "external": false
+                },
+                {
+                    "label": "화이트골드",
+                    "url": "../sub/coffee/coffee.html",
+                    "external": false
+                },
+                {
+                    "label": "난맥심",
+                    "url": "../sub/coffee/coffee.html",
+                    "external": false
+                }
+            ]
+        }]
+    },
+    {
+        "category": "콜롬비아 커피",
+        "items": [
+        {
+            "title": "아메리카노",
+            "children": [
+                {
+                    "label": "설탕",
+                    "url": "../sub/coffee/coffee.html",
+                    "external": false
+                }
+            ]
+        },
+        {
+            "title": "커피믹스",
+            "children": [
+                {
+                    "label": "모카골드",
+                    "url": "../sub/coffee/coffee.html",
+                    "external": false
+                },
+                {
+                    "label": "화이트골드",
+                    "url": "../sub/coffee/coffee.html",
+                    "external": false
+                },
+                {
+                    "label": "난맥심",
+                    "url": "../sub/coffee/coffee.html",
+                    "external": false
+                }
+            ]
+        }]
+    },
+    {
+        "category": "외부링크1",
+        "url": "/dhlqn1/dhlqn1.html"
+    },
+    {
+        "category": "외부링크2",
+        "url": "/dhlqn2/dhlqn2.html"
+    }
+]

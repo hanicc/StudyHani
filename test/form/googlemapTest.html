@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Google Maps JavaScript API v3 Example: Marker Categories</title>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDB7TNnLd2gA5BfLrdpBG7t6jZRzwPtUjk&callback=gMap" type="text/javascript"></script> -->
+</head>
+
+<body>
+    <div id="map" style="width: 400px; height: 300px;"></div>
+
+
+    <button type="button" onclick="displayMarkers(1);">Show Group 1</button>
+    <button type="button" onclick="displayMarkers(2);">Show Group 2</button>
+    <button type="button" onclick="displayMarkers(3);">Show Group 3</button>
+
+
+
+
+    <script type="text/javascript">
+    var beaches = [
+        ['Bondi Beach', -33.890542, 151.274856, 1],
+        ['Coogee Beach', -33.923036, 151.259052, 1],
+        ['Cronulla Beach', -34.028249, 151.157507, 2],
+        ['Manly Beach', -33.800101, 151.287478, 2],
+        ['Maroubra Beach', -33.950198, 151.259302, 2],
+        ['Bondi Beach', -33.890542, 151.274856, 3],
+        ['Coogee Beach', -33.623036, 151.359052, 3],
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: new google.maps.LatLng(-33.88, 151.28),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var markers = [];
+
+    // var i, newMarker;
+
+    for (i = 0; i < beaches.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(beaches[i][1], beaches[i][2]),
+            map: map,
+            title: beaches[i][0]
+        });
+
+        marker.category = beaches[i][3];
+        marker.setVisible(false);
+
+        markers.push(marker);
+    }
+
+    function displayMarkers(category) {
+        // var i;
+
+        for (i = 0; i < markers.length; i++) {
+            if (markers[i].category === category) {
+                markers[i].setVisible(true);
+            } else {
+                markers[i].setVisible(false);
+            }
+        }
+
+        console.log("sss", category)
+    }
+    </script>
+</body>
+
+</html>
