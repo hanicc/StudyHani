@@ -46,8 +46,8 @@
 .new_content .main_cont .inner .main_area .main_item { flex: 0 0 calc((100% - 32px) / 3); background-color: #fff; border-radius: 5px; padding: 20px; box-sizing: border-box; }
 
 /* sub */
-.new_content .sub_cont {}
-.new_content .sub_cont .inner { position: relative; background-color: #fff; border-radius: 5px; padding: 20px; }
+.new_content .sub_cont { height: calc(100% - 74px); }
+.new_content .sub_cont .inner { position: relative; background-color: #fff; border-radius: 5px; padding: 20px; height: calc(100% - 40px); }
 .new_content .sub_cont .inner .cont_area {}
 .new_content .sub_cont .inner .cont_area h3 { font-size: 20px; font-weight: bold; margin-bottom: 10px; }
 .new_content .sub_cont .inner .cont_area .tabel_cont {}
