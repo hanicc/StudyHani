@@ -110,6 +110,23 @@ $(function() {
         }
     });
 
+    // 문서 어디든 추가 (이벤트 위임)
+    $(document).on('click', '.sideMenu-toggle', function(){
+        const $sideMenu = $('.sideMenu');
+        const $newContent = $('.new_content');
+        const isClosed = $sideMenu.hasClass('closed');
+        if (!isClosed) {
+            $sideMenu.addClass('closed');
+            $newContent.addClass('expanded');
+            // 버튼 방향 바꾸기(예: < → >)
+            // $(this).html('&gt;');
+        } else {
+            $sideMenu.removeClass('closed');
+            $newContent.removeClass('expanded');
+            // $(this).html('&lt;');
+        }
+    });
+
     // 메인으로 돌아가기 (예: 로고 클릭 등에서 호출)
     $(document).on('click', '.goMain', function(e){
         e.preventDefault();
@@ -194,6 +211,9 @@ $(function() {
             return;
         }
         const html = `
+            <div class="sideMenu-toggle-wrap">
+                <button type="button" class="sideMenu-toggle" aria-label="사이드메뉴 접기/펼치기"><i clas="icon">O</i></button>
+            </div>
             <ul class="category" data-expanded="all">
                 ${categoryData.items.map((item, itemIdx) => `
                     <li>
@@ -209,7 +229,6 @@ $(function() {
                 `).join('')}
             </ul>
         `;
-
         $sideMenuContainer.html(html);
         $sideMenuContainer.find('.category > li').addClass('active');
     }
@@ -276,7 +295,7 @@ window.openCommonDialog = function(arg) {
                 height: arg.options.height || 'auto',
                 modal: arg.options.modal !== undefined ? arg.options.modal : true,
                 dialogClass: arg.options.dialogClass || '',
-                resizable: false,
+                resizable: true,
                 closeOnEscape: false,
                 open: function () {
                    // dim 클릭시 닫히게!
