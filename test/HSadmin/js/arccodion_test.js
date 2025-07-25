@@ -12,7 +12,8 @@ $(function() {
     let lastLoaded = { url: null, label: null };
 
     // 외부링크 여부 판별 함수
-    const isExternal = (item) => item.external || (item.url && !item.items);
+    // const isExternal = (item) => item.external || (item.url && !item.items);
+    const isExternal = (item) => item.external; // external로만 체크 true면 외부링크
 
     // 메뉴 데이터 로딩
     $.getJSON('./json/menu.json', function(data) {
@@ -169,12 +170,14 @@ $(function() {
 
     function showMainPage() {
         $('.sideMenu, .breadcrumb, .sub_cont').remove();
-        // .main_cont가 없으면 새로 만듦
-        if ($('.main_cont').length === 0) {
-            $('body').append('<div class="main_cont"><div class="inner"></div></div>');
+        // 항상 최신 main_cont를 찾음
+        let $mainCont = $('.new_content .main_cont');
+        if ($mainCont.length === 0) {
+            $mainCont = $('<aside class="main_cont"><div class="inner"></div></aside>');
+            $('.new_content').append($mainCont);
         }
-        $mainCont = $('.main_cont');
-        $mainCont.show();
+        // $mainCont = $('.main_cont');
+        // $mainCont.show();
         
         // 메인페이지 html 불러오기
         // const mainMenu = menuData.find(item => item.category === 'main');

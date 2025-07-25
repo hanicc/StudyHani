@@ -340,10 +340,12 @@
     },
     {
         "category": "외부링크1",
-        "url": "/dhlqn1/dhlqn1.html"
+        "url": "/dhlqn1/dhlqn1.html",
+        "external": false
     },
     {
         "category": "외부링크2",
-        "url": "/dhlqn2/dhlqn2.html"
+        "url": "/dhlqn2/dhlqn2.html",
+        "external": true
     }
 ]
