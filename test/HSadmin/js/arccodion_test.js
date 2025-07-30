@@ -5,7 +5,8 @@ $(function() {
     let $subCont = $('.sub_cont');
     let $mainCont = $('.main_cont');
 
-    let menuData = [];
+    let mainData = []; // main.json
+    let subData = [];  // menu.json
     let currentCategory, currentTitle, currentChildLabel;
 
     // 중복클릭시 html파일 load중복이슈 : 컨텐츠 영역에 마지막으로 로드한 url을 저장할 변수
@@ -15,50 +16,41 @@ $(function() {
     // const isExternal = (item) => item.external || (item.url && !item.items);
     const isExternal = (item) => item.external; // external로만 체크 true면 외부링크
 
-    // 메뉴 데이터 로딩
-    $.getJSON('./json/menu.json', function(data) {
-        menuData = data;
-        // setCurrentStateByMenu(menuData[0], 0, 0);
-        renderHeaderMenu(menuData);
-        showMainPage(); // 최초 메인화면
-        // renderSideMenu(menuData[0]);
-        // renderBreadcrumb();
+    // main.json, sub.json 동시 로드
+    $.when(
+        $.getJSON('./json/main.json'),
+        $.getJSON('./json/menu.json')
+    ).done(function(mainRes, subRes) {
+        mainData = mainRes[0];
+        subData = subRes[0];
 
-        // 첫 화면 html 불러오기
-        // const firstUrl = menuData[0].items[0].children[0].url;
-        // if (firstUrl) $('.cont .inner').load(firstUrl); //빽업
-        // if (firstUrl) $('#subCont').attr('src', firstUrl); // iframe에 html을 로드
+        renderHeaderMenu();
+        showMainPage();
     });
 
     //헤더 메뉴 클릭 이벤트
     $headerMenu.on('click', 'li a', function(e) {
-        if ($(this).attr('target') === '_blank') return; // 외부링크는 a에 target="_blank"가 있으므로 기본 동작
+        // 외부링크면 기본 동작(새창)만 하고 함수 종료
+        if ($(this).attr('target') === '_blank') {
+            e.stopPropagation(); // 이벤트 버블링 방지
+            return;
+        }
         e.preventDefault();
 
         $headerMenu.find('li').removeClass('active');
         $(this).parent('li').addClass('active');
-
-        // 1.기준점 먼저 저장
-        const $mainCont = $('.main_cont');
-        const $newContent = $mainCont.closest('.new_content');
-        const $newContainer = $newContent.closest('.new_container');
 
         // 2.메인 영역 삭제
         $('.main_cont').remove();
 
         // 3.서브 영역 없으면 동적 생성
         if ($('.sideMenu').length === 0) {
-            // 1.sideMenu가 없으면 new_container에 가장 먼저 추가
             const $sideMenu = $('<aside class="sideMenu"></aside>');
-            if ($newContainer.find('.sideMenu').length === 0) {
-                $newContainer.prepend($sideMenu);
-            }
-            // 2.breadcrumb가 없으면 new_content의 맨 위에 추가
+            $('.new_container').prepend($sideMenu);
+
             const $breadcrumb = $('<div class="breadcrumb"></div>');
-            if ($newContent.find('.breadcrumb').length === 0) {
-                $newContent.prepend($breadcrumb);
-            }
-            // 3.sub_cont가 없으면 new_content에 추가
+            $('.new_content').prepend($breadcrumb);
+
             const $subCont = $(`
                 <aside class="sub_cont">
                     <div class="inner">
@@ -66,11 +58,9 @@ $(function() {
                     </div>
                 </aside>
             `);
-            if ($newContent.find('.sub_cont').length === 0) {
-                $newContent.append($subCont); //main_cont가 없으니 new_content에 append
-            }
+            $('.new_content').append($subCont);
         }
-        
+
         $breadcrumbContainer = $('.breadcrumb');
         $sideMenuContainer = $('.sideMenu');
         $subCont = $('.sub_cont');
@@ -78,10 +68,16 @@ $(function() {
         const category = $(this).data('category');
         currentCategory = category;
         
-        // 해당 카테고리의 데이터 찾기
-        const categoryData = menuData.find(item => item.category === category);
-        // console.log("헤더클릭", categoryData);
-        if (!categoryData) return; // data-category가 없는 외부 링크 클릭시 리턴
+        // menu.json에서 해당 카테고리 데이터 찾기
+        const categoryData = subData.find(item => item.category === category);
+        
+        // 만약 categoryData가 없으면(즉, 외부링크였거나 잘못된 값) 추가 동작 없이 return
+        if (!categoryData) {
+            $sideMenuContainer.empty();
+            $breadcrumbContainer.empty();
+            $subCont.empty();
+            return;
+        }
 
         renderSideMenu(categoryData);
 
@@ -94,20 +90,14 @@ $(function() {
             const [firstChild] = firstItem.children || [];
             if (firstChild) {
                 if (!firstChild.external) {
-                    loadContent(firstChild.url, firstChild.label); // 로드 성공 시 갱신
+                    loadContent(firstChild.url, firstChild.label);
                 } else {
-                    // 외부링크면 새창
                     window.open(firstChild.url, '_blank');
                 }
-
-                // 상태 및 브레드크럼 갱신
                 currentTitle = firstItem.title;
                 currentChildLabel = firstChild.label;
                 renderBreadcrumb();
             }
-        } else if (categoryData.url) {
-            // 외부링크 카테고리라면
-            window.open(categoryData.url, '_blank');
         }
     });
 
@@ -148,21 +138,17 @@ $(function() {
 
         $('.sideMenu ul > li > ul > li').removeClass('active');
         $(this).parent('li').addClass('active');
-        // 현재 클릭된 1차 메뉴 li에도 active 추가 (아코디언 상태 유지)
-        // $(this).closest('li').parent().closest('li').addClass('active');
-        
 
         const itemIdx = Number($(this).data('item-idx'));
         const childIdx = Number($(this).data('child-idx'));
-        const categoryData = menuData.find(item => item.category === currentCategory);
+        const categoryData = subData.find(item => item.category === currentCategory);
         const itemData = categoryData?.items[itemIdx];
         const childData = itemData?.children[childIdx];
-    
+
         if (childData && !childData.external) {
-            loadContent(childData.url, childData.label); // 로드 성공 시 갱신
+            loadContent(childData.url, childData.label);
         }
 
-        // 브레드크럼 등 필요한 정보도 여기서 갱신
         currentTitle = itemData.title;
         currentChildLabel = childData.label;
         renderBreadcrumb();
@@ -170,37 +156,23 @@ $(function() {
 
     function showMainPage() {
         $('.sideMenu, .breadcrumb, .sub_cont').remove();
-        // 항상 최신 main_cont를 찾음
         let $mainCont = $('.new_content .main_cont');
         if ($mainCont.length === 0) {
             $mainCont = $('<aside class="main_cont"><div class="inner"></div></aside>');
             $('.new_content').append($mainCont);
         }
-        // $mainCont = $('.main_cont');
-        // $mainCont.show();
-        
-        // 메인페이지 html 불러오기
-        // const mainMenu = menuData.find(item => item.category === 'main');
-        // if (mainMenu && mainMenu.url) {
-        //     $mainCont.find('.inner').load(mainMenu.url);
-        // } else {
-        //     $mainCont.find('.inner').load('../main/main.html');
-        // }
-        // 항상 main.html 불러오기
-        $mainCont.find('.inner').load('./main/main.html');
+        // main.json에서 main url 찾아서 로드
+        const mainMenu = mainData.find(item => item.category === 'main');
+        const mainUrl = mainMenu && mainMenu.url ? mainMenu.url : './main/main.html';
+        $mainCont.find('.inner').load(mainUrl);
     }
 
     //헤더 메뉴 렌더링
-    function renderHeaderMenu(menuData) {
-        // $headerMenu.html(menuData.map(item =>
-        //     isExternal(item)
-        //         ? `<li><a href="${item.url}" target="_blank" rel="noopener" title="새창으로 이동">${item.category}</a></li>` //외부링크
-        //         : `<li><a href="#" data-category="${item.category}">${item.category}</a></li>` //하위 메뉴가 있을땐 data-category속성 추가
-        // ).join(''));
-        $headerMenu.html(menuData
-            .filter(item => item.category !== 'main') // "main" 제외
-            .map(item =>
-                isExternal(item)
+    function renderHeaderMenu() {
+        // main.json에 "main"만 있을 경우, 서브 메뉴는 sub.json에서 가져옴
+        // main 제외 나머지 카테고리만 헤더에 표시
+        $headerMenu.html(subData.map(item =>
+            isExternal(item)
                     ? `<li><a href="${item.url}" target="_blank" rel="noopener" title="새창으로 이동">${item.category}</a></li>`
                     : `<li><a href="#" data-category="${item.category}">${item.category}</a></li>`
             ).join(''));
@@ -208,9 +180,9 @@ $(function() {
 
     // 사이드 메뉴 렌더링
     function renderSideMenu(categoryData) {
-        // console.log("사이드", categoryData)
-        if (categoryData.category === 'main') {
-            $sideMenuContainer.html(''); // 메인 카테고리면 아예 사이드메뉴 비움
+        // categoryData가 없거나, items가 없으면 비워주고 return
+        if (!categoryData || !Array.isArray(categoryData.items)) {
+            $sideMenuContainer.empty();
             return;
         }
         const html = `

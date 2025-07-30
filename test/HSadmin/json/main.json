@@ -1,0 +1,8 @@
+[
+    {
+        "category": "main",
+        "label": "메인",
+        "url": "./main/main.html",
+        "visible": false 
+    }
+]

@@ -24,6 +24,7 @@
     /* max-width: 200px;  */
     position: relative;
     width: 200px;
+    
     transition: width 0.3s, margin-left 0.3s;
 }
 .new_container .sideMenu ul.category { }
@@ -53,13 +54,14 @@
 .sideMenu-toggle {
     cursor: pointer;
     font-size: 18px;
-    background: #878787;
+    background: #fff;
     border: none;
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2); */
+    box-shadow: 3px 0 4px rgba(0,0,0,0.2);
     width: 25px;
     height: 50px;
     transition: transform 0.3s;
