@@ -1,19 +1,25 @@
+<link rel="stylesheet" href="../../css/style.css">
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="../../js/sub_common.js"></script>
+
 <article class="cont_area">
-   <h3>만화3</h3>
-   <div class="tabel_cont">
-        <table>
-            <thead>
-                <tr>
-                    <th><input type="text"></th>
-                    <th>2222</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>aaaaa</td>
-                    <td>hhhhh</td>
-                </tr>
-            </tbody>
-        </table>
-   </div>
+    <h3>만화3</h3>
+
+    <div class="tab-module">
+        <div class="tabs">
+            <button class="tab active" data-tab="tab1">만화 탭 111</button>
+            <button class="tab" data-tab="tab2">만화 탭 222</button>
+            <button class="tab" data-tab="tab3">만화 탭 333</button>
+        </div>
+
+        <div class="tab-content active" id="tab1">
+            <p>만화 탭 111의 내용입니다.</p>
+        </div>
+        <div class="tab-content" id="tab2">
+            <p>만화 탭 222의 내용입니다.</p>
+        </div>
+        <div class="tab-content" id="tab3">
+            <p>만화 탭 333의 내용입니다.</p>
+        </div>
+    </div>
 </article>

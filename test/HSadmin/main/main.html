@@ -14,10 +14,15 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt libero, corporis voluptatibus reprehenderit laboriosam iste odit voluptates reiciendis molestiae alias ratione nesciunt enim sed, delectus in mollitia iure nemo voluptatum!</p>
                 </div>
             </div>
+
+            <ul style="margin-top: 30px;">
+                <button onclick="pramUrl('과일','사과','쨈',{popup:'fruits1Popup'})">과일/사과/쨈 + 팝업</button>
+                <button onclick="pramUrl({category:'만화',title:'명탐정 코난',child:'탐정 !!!!!!!!!',params:{tab:'만화 탭 333'}})">커피 탭 이동</button>
+            </ul>
         </div>
 
         <div class="main_item">
-            item2 <div class="test"></div>
+            item2
             <input type="text">
         </div>
 
@@ -32,6 +37,10 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt libero, corporis voluptatibus reprehenderit laboriosam iste odit voluptates reiciendis molestiae alias ratione nesciunt enim sed, delectus in mollitia iure nemo voluptatum!</p>
                 </div>
             </div>
+
+            <ul style="margin-top: 30px;">
+                <li><button type="button" style="background-color: blueviolet; color: #fff;">이동3</button></li>
+            </ul>
         </div>
         <div class="main_item">item4</div>
         
@@ -51,6 +60,15 @@
         <div class="main_item">item6</div>
     </section>
 </article>
+
+<div class="loading-wrap">
+    <div class="loading-container">
+        <div class="loading"></div>
+        <i class="icon"><img src="icon_loading.png" alt=""></i>
+        <div id="loading-text">loading</div>
+    </div>
+</div>
+    
 
 <script>
 let $ac_btnCon = $('.ac_btnCon');

@@ -1,5 +1,11 @@
 [
     {
+        "category": "main",
+        "label": "메인",
+        "url": "./main/main.html",
+        "external": false
+    },
+    {
         "category": "과일",
         "items": [
         {
@@ -8,17 +14,20 @@
                 {
                     "label": "쨈",
                     "url": "./sub/fruits/fruits1.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "1자식 메뉴 외부링크",
                     "url": "https://korea.hyosung-tns.com/ko/about-us/design-engineering/",
-                    "external": true
+                    "external": true,
+                    "hidden" : false
                 },
                 {
                     "label": "사과파이",
                     "url": "./sub/fruits/fruits2.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : true
                 }
             ]
         },
@@ -28,17 +37,20 @@
                 {
                     "label": "222바나나",
                     "url": "./sub/fruits/fruits3.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "3바나나",
                     "url": "./sub/fruits/fruits4.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "44바나나",
                     "url": "./sub/fruits/fruits5.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 }
             ]
         },
@@ -48,32 +60,38 @@
                 {
                     "label": "1메론",
                     "url": "./sub/fruits/fruits1.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "2메론",
                     "url": "./sub/fruits/fruits2.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "3메론",
                     "url": "./sub/fruits/fruits3.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "37메론",
                     "url": "./sub/fruits/fruits4.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "32메론",
                     "url": "./sub/fruits/fruits5.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "34메론",
                     "url": "./sub/fruits/fruits6.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 }
             ]
         }]
@@ -85,19 +103,22 @@
             "title": "BMW",
             "children": [
                 {
-                    "label": "깡통",
+                    "label": "깡통!!!!",
                     "url": "./sub/car/car1.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "에어컨",
                     "url": "./sub/car/car2.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "도난방지",
                     "url": "./sub/car/car2.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 }
             ]
         }]
@@ -111,17 +132,20 @@
                 {
                     "label": "이노스케",
                     "url": "./sub/comic/comic1.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "사신",
                     "url": "./sub/comic/comic2.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "3자식 메뉴 외부링크",
                     "url": "https://www.hyosung.com/kr",
-                    "external": true
+                    "external": true,
+                    "hidden" : false
                 }
             ]
         },
@@ -131,17 +155,20 @@
                 {
                     "label": "코난",
                     "url": "./sub/comic/comic1.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "남도일",
                     "url": "./sub/comic/comic2.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
-                    "label": "탐정",
+                    "label": "탐정 !!!!!!!!!",
                     "url": "./sub/comic/comic3.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 }
             ]
         },
@@ -151,17 +178,20 @@
                 {
                     "label": "손오공",
                     "url": "./sub/comic/comic1.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "베지터",
                     "url": "./sub/comic/comic2.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "피콜로",
                     "url": "./sub/comic/comic3.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 }
             ]
         },
@@ -171,7 +201,8 @@
                 {
                     "label": "용",
                     "url": "./sub/comic/comic4.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 }
             ]
         },
@@ -181,17 +212,20 @@
                 {
                     "label": "유비",
                     "url": "./sub/comic/comic1.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "조조",
                     "url": "./sub/comic/comic2.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "관우",
                     "url": "./sub/comic/comic3.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 }
             ]
         }]
@@ -205,7 +239,8 @@
                 {
                     "label": "설탕",
                     "url": "./sub/coffee/coffee.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 }
             ]
         },
@@ -215,17 +250,20 @@
                 {
                     "label": "모카골드",
                     "url": "./sub/coffee/coffee.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "화이트골드",
                     "url": "./sub/coffee/coffee.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "난맥심",
                     "url": "./sub/coffee/coffee.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 }
             ]
         }]
@@ -237,9 +275,10 @@
             "title": "아메리카노",
             "children": [
                 {
-                    "label": "설탕",
-                    "url": "./sub/coffee/coffee.html",
-                    "external": false
+                    "label": "설탕1",
+                    "url": "./sub/italy/coffee1.html",
+                    "external": false,
+                    "hidden" : false
                 }
             ]
         },
@@ -247,19 +286,22 @@
             "title": "미국 커피믹스",
             "children": [
                 {
-                    "label": "모카골드",
-                    "url": "./sub/coffee/coffee.html",
-                    "external": false
+                    "label": "모카골드2",
+                    "url": "./sub/italy/coffee2.html",
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "화이트골드",
                     "url": "./sub/coffee/coffee.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "난맥심",
                     "url": "./sub/coffee/coffee.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 }
             ]
         }]
@@ -271,9 +313,16 @@
             "title": "아메리카노",
             "children": [
                 {
-                    "label": "설탕",
-                    "url": "./sub/coffee/coffee.html",
-                    "external": false
+                    "label": "설탕!!!!!",
+                    "url": "./sub/korea/coffee1.html",
+                    "external": false,
+                    "hidden" : false
+                },
+                {
+                    "label": "설탕 두푼!!!!!!",
+                    "url": "./sub/korea/coffee2.html",
+                    "external": false,
+                    "hidden" : false
                 }
             ]
         },
@@ -283,17 +332,20 @@
                 {
                     "label": "모카골드",
                     "url": "./sub/coffee/coffee.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "화이트골드",
                     "url": "./sub/coffee/coffee.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "난맥심",
                     "url": "./sub/coffee/coffee.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 }
             ]
         }]
@@ -307,7 +359,8 @@
                 {
                     "label": "설탕",
                     "url": "./sub/coffee/coffee.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 }
             ]
         },
@@ -317,17 +370,20 @@
                 {
                     "label": "모카골드",
                     "url": "./sub/coffee/coffee.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "화이트골드",
                     "url": "./sub/coffee/coffee.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 },
                 {
                     "label": "난맥심",
                     "url": "./sub/coffee/coffee.html",
-                    "external": false
+                    "external": false,
+                    "hidden" : false
                 }
             ]
         }]
@@ -335,11 +391,13 @@
     {
         "category": "외부링크1",
         "url": "/dhlqn1/dhlqn1.html",
-        "external": false
+        "external": false,
+        "hidden" : false
     },
     {
         "category": "외부링크2",
         "url": "/dhlqn2/dhlqn2.html",
-        "external": true
+        "external": true,
+        "hidden" : false
     }
 ]
