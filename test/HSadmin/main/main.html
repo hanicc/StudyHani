@@ -16,7 +16,28 @@
             </div>
 
             <ul style="margin-top: 30px;">
-                <button onclick="gotoPageUrl('CAT_FRUITS', 'GRP_BANANA', 'PAGE_BANANA_2')">과일>바나나>3바나나</button>
+                <!-- 사용 예시 -->
+                <!--
+                1) 기존 그대로
+                gotoPageUrl('CAT_FRUITS', 'GRP_BANANA', 'PAGE_BANANA_2');
+                
+                2) 문자열 쿼리 + 해시 직접
+                gotoPageUrl('CAT_FRUITS', 'GRP_BANANA', 'PAGE_BANANA_2', '?testUrl#active');
+                
+                3) 해시만
+                gotoPageUrl('CAT_FRUITS', 'GRP_BANANA', 'PAGE_BANANA_2', '#active');
+                
+                4) 객체 기반 (권장)
+                gotoPageUrl('CAT_FRUITS', 'GRP_BANANA', 'PAGE_BANANA_2', {
+                  query: { foo: 'bar', num: 10, empty: null },  // null/undefined는 제외 처리 예시
+                  hash: 'section1'
+                });
+                
+                5) 외부(external) 링크에도 동일 적용
+                gotoPageUrl('CAT_EXTERNAL', null, 'PAGE_SOMETHING', { hash: 'top' });
+                -->
+
+                <button onclick="gotoPageUrl('CAT_FRUITS', 'GRP_BANANA', 'PAGE_BANANA_2', '?testUrl#active')">과일>바나나>3바나나</button>
                 <button onclick="">커피>모카골드</button>
             </ul>
         </div>

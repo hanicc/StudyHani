@@ -1,7 +1,103 @@
 // --- 전역 상태 / 인덱스 ---
 let menuData = [];
 const menuIndex = { categories:{}, items:{}, pages:{} };
-let currentState = { catId:null, itemId:null, pageId:null };
+
+/************************************************************
+ * (NEW) URL Helper: 쿼리/해시 병합
+ ************************************************************/
+function serializeQuery(obj){
+    if (!obj) return '';
+    const parts = [];
+    Object.keys(obj).forEach(k => {
+        const v = obj[k];
+        if (v === undefined || v === null) return;
+        if (Array.isArray(v)){
+            v.forEach(item => {
+                if (item !== undefined && item !== null){
+                    parts.push(encodeURIComponent(k) + '=' + encodeURIComponent(item));
+                }
+            });
+        } else {
+            parts.push(encodeURIComponent(k) + '=' + encodeURIComponent(v));
+        }
+    });
+    return parts.join('&');
+}
+
+/**
+ * baseUrl: 원본 URL (이미 ? 또는 # 포함 가능)
+ * extra: string | { query?:Object, hash?:string }
+ */
+function appendExtraToUrl(baseUrl, extra){
+    if (!extra) return baseUrl;
+
+    let url = baseUrl;
+    let baseQuery = '';
+    let baseHash = '';
+
+    // 기존 hash 추출
+    const hashIndex = url.indexOf('#');
+    if (hashIndex >= 0){
+        baseHash = url.substring(hashIndex + 1);
+        url = url.substring(0, hashIndex);
+    }
+    // 기존 query 추출
+    const queryIndex = url.indexOf('?');
+    if (queryIndex >= 0){
+        baseQuery = url.substring(queryIndex + 1);
+        url = url.substring(0, queryIndex);
+    }
+
+    let extraQuery = '';
+    let extraHash = '';
+
+    if (typeof extra === 'string'){
+        // 문자열 형태: '?a=1#h' , '#h' , '?a=1'
+        // 공백 제거
+        const trimmed = extra.trim();
+        // 해시 먼저 분리
+        const hashPos = trimmed.indexOf('#');
+        let queryPart = trimmed;
+        if (hashPos >= 0){
+            extraHash = trimmed.substring(hashPos + 1);
+            queryPart = trimmed.substring(0, hashPos);
+        }
+        if (queryPart.startsWith('?')){
+            extraQuery = queryPart.substring(1);
+        } else if (queryPart.length && !queryPart.startsWith('?')){
+            // 사용자가 '?' 안 붙인 문자열을 그냥 주었다면 쿼리로 간주
+            extraQuery = queryPart;
+        }
+    } else if (typeof extra === 'object'){
+        if (extra.query){
+            extraQuery = serializeQuery(extra.query);
+        }
+        if (extra.hash){
+            extraHash = extra.hash.toString();
+        }
+    }
+
+    // 쿼리 병합
+    const finalQueryParts = [];
+    if (baseQuery) finalQueryParts.push(baseQuery);
+    if (extraQuery) finalQueryParts.push(extraQuery);
+    const mergedQuery = finalQueryParts.join('&');
+
+    // 해시 결정: extraHash가 있으면 그것을 우선, 없으면 baseHash
+    const mergedHash = extraHash || baseHash;
+
+    let finalUrl = url;
+    if (mergedQuery) finalUrl += '?' + mergedQuery;
+    if (mergedHash) finalUrl += '#' + mergedHash;
+
+    return finalUrl;
+}
+
+/************************************************************
+ * (MOD) 전역 상태 currentState에 urlExtra 추가
+ ************************************************************/
+let currentState = { catId:null, itemId:null, pageId:null, urlExtra:null };
+
 let lastLoaded = { url:null, label:null };
 let menuLoaded = false;
 const pendingNavigations = [];
@@ -15,13 +111,21 @@ $.getJSON('./json/menu.json').done(data => {
     renderHeaderMenu(menuData);
     menuLoaded = true;
 
+    const initialRoute = parseConcatQuery();
+
     // 대기 중 네비게이션 처리
     while(pendingNavigations.length){
         const args = pendingNavigations.shift();
         gotoPageUrl(...args);
     }
 
-    showMainPage();
+    if (!currentState.catId){
+        if (initialRoute){
+            gotoPageUrl(initialRoute.catId, initialRoute.itemId, initialRoute.pageId, initialRoute.extra, { noUrlUpdate:true });
+        } else {
+            showMainPage();
+        }
+    }
 }).fail(err => {
     console.error('menu.json load failed', err);
     $('.hd ul').html('<li class="error">메뉴 로드 실패</li>');
@@ -206,7 +310,7 @@ function applyActiveStates(){
 }
 
 /************************************************************
- * 콘텐츠 로딩 (iframe)
+ * 콘텐츠 로딩 (iframe) 최종 URL만 비교
  ************************************************************/
 function loadContent(url, label){
     if (lastLoaded.url === url) return;
@@ -227,14 +331,17 @@ function findFirstDisplayablePage(itemObj){
 
 /************************************************************
  * 페이지 오픈 (external vs iframe)
- ************************************************************/
-function openPageObject(pageObj){
+ ************************************************************/ 
+ function openPageObject(pageObj, urlExtra){
+    const baseUrl = pageObj.url;
+    const finalUrl = appendExtraToUrl(baseUrl, urlExtra);
+
     if (pageObj.external){
         // 특정버튼 으로 접근했을때 새창으로 띄워질 메뉴에 해당
-        window.open(pageObj.url, '_blank', 'noopener');
+        window.open(finalUrl, '_blank', 'noopener');
         return;
     }
-    loadContent(pageObj.url, pageObj.label);
+    loadContent(finalUrl, pageObj.label);
 }
 
 /************************************************************
@@ -246,17 +353,46 @@ function showMainPage(){
         $('.new_content').append('<aside class="main_cont"><div class="inner"></div></aside>');
     }
     $('.main_cont').show().find('.inner').load('./main/main.html');
-    currentState = { catId:null, itemId:null, pageId:null };
+    currentState = { catId:null, itemId:null, pageId:null, urlExtra:null };
     lastLoaded = { url:null, label:null };
     $('.hd ul li').removeClass('active');
+
+    // 메인 화면일 때는 주소창을 index.html 기본 상태로 만들고 싶다면 아래 활성화:
+    history.replaceState(null, '', window.location.pathname);
+}
+
+/************************************************************
+ * (NEW) Concat Query 헬퍼
+ * 포맷: ?catId+itemId+pageId(+extra)
+ ************************************************************/
+function buildConcatQuery(catId, itemId, pageId, extra){
+    if (!catId || !itemId || !pageId) return '';
+    const segs = [catId, itemId, pageId];
+    if (extra !== undefined && extra !== null && extra !== ''){
+        segs.push(String(extra));
+    }
+    return '?' + segs.map(s => encodeURIComponent(s)).join('?');
+}
+
+function parseConcatQuery(){
+    const qs = window.location.search;
+    if (!qs || qs.length < 2) return null;
+    // 앞의 '?' 제거 후 split('+')
+    const parts = qs.substring(1).split('+').map(p => decodeURIComponent(p));
+    if (parts.length < 3) return null;
+    const [catId, itemId, pageId, extra] = parts;
+    if (!catId || !itemId || !pageId) return null;
+    return { catId, itemId, pageId, extra: extra !== undefined ? extra : null };
 }
 
 /************************************************************
  * 공개 내비게이션 함수
  ************************************************************/
-window.gotoPageUrl = function(catId, itemId, pageId){
+window.gotoPageUrl = function(catId, itemId, pageId, urlExtra, options){
+    const opts = options || {};
+
     if (!menuLoaded){
-        pendingNavigations.push([catId, itemId, pageId]);
+        pendingNavigations.push([catId, itemId, pageId, urlExtra, opts]);
         return;
     }
 
@@ -287,12 +423,18 @@ window.gotoPageUrl = function(catId, itemId, pageId){
         renderSideMenuByCatId(catId);
         currentState.itemId = null;
         currentState.pageId = null;
+        // 카테고리가 바뀌면 기존 extra는 일반적으로 의미가 없다고 판단 → 초기화
+        currentState.urlExtra = null;
     }
 
     currentState.catId = catId;
-
     if (itemId) currentState.itemId = itemId;
     if (pageId) currentState.pageId = pageId;
+
+    // urlExtra 전달이 명시되었을 때만 덮어씀 (undefined면 유지)
+    if (urlExtra !== undefined){
+        currentState.urlExtra = urlExtra;
+    }
 
     // item 자동 선택
     if (!currentState.itemId && Array.isArray(cat.items)){
@@ -311,9 +453,7 @@ window.gotoPageUrl = function(catId, itemId, pageId){
         }
     }
 
-    applyActiveStates();
-
-    // pageObj 결정
+    // page 객체
     let pageObj = null;
     if (currentState.pageId){
         pageObj = menuIndex.pages[currentState.pageId]?.page;
@@ -326,12 +466,42 @@ window.gotoPageUrl = function(catId, itemId, pageId){
     }
 
     if (pageObj){
-        openPageObject(pageObj);
+        openPageObject(pageObj); // iframe src는 extra 안 붙임 (요구사항 반영)
     }
 
     updateBreadcrumb();
     applyActiveStates();
+
+    // 주소창 쿼리 업데이트 (메인화면 제외)
+    if (!opts.noUrlUpdate && currentState.catId && currentState.itemId && currentState.pageId){
+        const q = buildConcatQuery(
+            currentState.catId,
+            currentState.itemId,
+            currentState.pageId,
+            currentState.urlExtra
+        );
+        // history.replaceState 사용: 뒤로가기 스택을 늘리고 싶다면 pushState로 바꿀 것
+        history.replaceState(
+            { catId: currentState.catId, itemId: currentState.itemId, pageId: currentState.pageId, extra: currentState.urlExtra },
+            '',
+            window.location.pathname + q
+        );
+    }
 };
+
+/************************************************************
+ * (NEW) popstate 처리 (뒤/앞 이동 지원) - 선택 기능
+ * 필요 없으면 제거 가능
+ ************************************************************/
+window.addEventListener('popstate', () => {
+    const parsed = parseConcatQuery();
+    if (parsed){
+        gotoPageUrl(parsed.catId, parsed.itemId, parsed.pageId, parsed.extra, { noUrlUpdate:true });
+    } else {
+        // 쿼리 없으면 메인으로
+        showMainPage();
+    }
+});
 
 /************************************************************
  * 이벤트 바인딩
