@@ -1,29 +1,36 @@
 [
     {
+        "catId": "CAT_MAIN",
         "category": "main",
         "label": "메인",
         "url": "./main/main.html",
+        "type": "main",
         "external": false
     },
     {
+        "catId": "CAT_FRUITS",
         "category": "과일",
         "items": [
         {
+            "itemId": "GRP_APPLE",
             "title": "사과",
             "children": [
                 {
+                    "pageId": "PAGE_APPLE_JAM",
                     "label": "쨈",
                     "url": "./sub/fruits/fruits1.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_APPLE_NAVER",
                     "label": "1자식 메뉴 외부링크",
                     "url": "https://korea.hyosung-tns.com/ko/about-us/design-engineering/",
                     "external": true,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_APPLE_PIE",
                     "label": "사과파이",
                     "url": "./sub/fruits/fruits2.html",
                     "external": false,
@@ -32,21 +39,25 @@
             ]
         },
         {
+            "itemId": "GRP_BANANA",
             "title": "바나나",
             "children": [
                 {
+                    "pageId": "PAGE_BANANA_1",
                     "label": "222바나나",
                     "url": "./sub/fruits/fruits3.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_BANANA_2",
                     "label": "3바나나",
                     "url": "./sub/fruits/fruits4.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_BANANA_3",
                     "label": "44바나나",
                     "url": "./sub/fruits/fruits5.html",
                     "external": false,
@@ -55,41 +66,34 @@
             ]
         },
         {
+            "itemId": "GRP_MELLON",
             "title": "메론",
             "children": [
                 {
+                    "pageId": "PAGE_MELLON_1",
                     "label": "1메론",
                     "url": "./sub/fruits/fruits1.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_MELLON_2",
                     "label": "2메론",
                     "url": "./sub/fruits/fruits2.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_MELLON_3",
                     "label": "3메론",
                     "url": "./sub/fruits/fruits3.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_MELLON_4",
                     "label": "37메론",
                     "url": "./sub/fruits/fruits4.html",
-                    "external": false,
-                    "hidden" : false
-                },
-                {
-                    "label": "32메론",
-                    "url": "./sub/fruits/fruits5.html",
-                    "external": false,
-                    "hidden" : false
-                },
-                {
-                    "label": "34메론",
-                    "url": "./sub/fruits/fruits6.html",
                     "external": false,
                     "hidden" : false
                 }
@@ -97,24 +101,29 @@
         }]
     },
     {
+        "catId": "CAT_CAR",
         "category": "자동차",
         "items": [
         {
+            "itemId": "GRP_BMW",
             "title": "BMW",
             "children": [
                 {
+                    "pageId": "PAGE_BMW_OPTION1",
                     "label": "깡통!!!!",
                     "url": "./sub/car/car1.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_BMW_OPTION2",
                     "label": "에어컨",
                     "url": "./sub/car/car2.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_BMW_OPTION3",
                     "label": "도난방지",
                     "url": "./sub/car/car2.html",
                     "external": false,
@@ -124,24 +133,29 @@
         }]
     },
     {
+        "catId": "CAT_COMIC",
         "category": "만화",
         "items": [
         {
+            "itemId": "GRP_COMMIC_A",
             "title": "귀멸의 칼날",
             "children": [
                 {
+                    "pageId": "PAGE_COMMIC_A_1",
                     "label": "이노스케",
                     "url": "./sub/comic/comic1.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_COMMIC_A_2",
                     "label": "사신",
                     "url": "./sub/comic/comic2.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_COMMIC_A_3",
                     "label": "3자식 메뉴 외부링크",
                     "url": "https://www.hyosung.com/kr",
                     "external": true,
@@ -150,21 +164,25 @@
             ]
         },
         {
+            "itemId": "GRP_COMMIC_B",
             "title": "명탐정 코난",
             "children": [
                 {
+                    "pageId": "PAGE_COMMIC_B_1",
                     "label": "코난",
                     "url": "./sub/comic/comic1.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_COMMIC_B_2",
                     "label": "남도일",
                     "url": "./sub/comic/comic2.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_COMMIC_B_3",
                     "label": "탐정 !!!!!!!!!",
                     "url": "./sub/comic/comic3.html",
                     "external": false,
@@ -173,21 +191,25 @@
             ]
         },
         {
+            "itemId": "GRP_COMMIC_C",
             "title": "드래곤볼",
             "children": [
                 {
+                    "pageId": "PAGE_COMMIC_C_1",
                     "label": "손오공",
                     "url": "./sub/comic/comic1.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_COMMIC_C_2",
                     "label": "베지터",
                     "url": "./sub/comic/comic2.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_COMMIC_C_3",
                     "label": "피콜로",
                     "url": "./sub/comic/comic3.html",
                     "external": false,
@@ -196,9 +218,11 @@
             ]
         },
         {
+            "itemId": "GRP_COMMIC_D",
             "title": "용의아들",
             "children": [
                 {
+                    "pageId": "PAGE_COMMIC_D_1",
                     "label": "용",
                     "url": "./sub/comic/comic4.html",
                     "external": false,
@@ -207,21 +231,25 @@
             ]
         },
         {
+            "itemId": "GRP_COMMIC_F",
             "title": "삼국지",
             "children": [
                 {
+                    "pageId": "PAGE_COMMIC_F_1",
                     "label": "유비",
                     "url": "./sub/comic/comic1.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_COMMIC_F_2",
                     "label": "조조",
                     "url": "./sub/comic/comic2.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_COMMIC_F_3",
                     "label": "관우",
                     "url": "./sub/comic/comic3.html",
                     "external": false,
@@ -231,12 +259,15 @@
         }]
     },
     {
+        "catId": "CAT_COFFEE",
         "category": "커피",
         "items": [
         {
+            "itemId": "GRP_COFFEE_A",
             "title": "아메리카노",
             "children": [
                 {
+                    "pageId": "PAGE_COFFEE_A_1",
                     "label": "설탕",
                     "url": "./sub/coffee/coffee.html",
                     "external": false,
@@ -245,21 +276,25 @@
             ]
         },
         {
+            "itemId": "GRP_COFFEE_B",
             "title": "커피믹스",
             "children": [
                 {
+                    "pageId": "PAGE_COFFEE_B_1",
                     "label": "모카골드",
                     "url": "./sub/coffee/coffee.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_COFFEE_B_2",
                     "label": "화이트골드",
                     "url": "./sub/coffee/coffee.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_COFFEE_B_3",
                     "label": "난맥심",
                     "url": "./sub/coffee/coffee.html",
                     "external": false,
@@ -269,12 +304,15 @@
         }]
     },
     {
+        "catId": "CAT_ITALY_COFFEE",
         "category": "이탈리아 커피",
         "items": [
         {
+            "itemId": "GRP_ITALY_A",
             "title": "아메리카노",
             "children": [
                 {
+                    "pageId": "PAGE_ITALY_A_1",
                     "label": "설탕1",
                     "url": "./sub/italy/coffee1.html",
                     "external": false,
@@ -283,21 +321,25 @@
             ]
         },
         {
+            "itemId": "GRP_ITALY_B",
             "title": "미국 커피믹스",
             "children": [
                 {
+                    "pageId": "PAGE_ITALY_B_1",
                     "label": "모카골드2",
                     "url": "./sub/italy/coffee2.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_ITALY_B_2",
                     "label": "화이트골드",
                     "url": "./sub/coffee/coffee.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_ITALY_B_3",
                     "label": "난맥심",
                     "url": "./sub/coffee/coffee.html",
                     "external": false,
@@ -307,18 +349,22 @@
         }]
     },
     {
+        "catId": "CAT_KOREA_COFFEE",
         "category": "한국 커피",
         "items": [
         {
+            "itemId": "GRP_KOREA_A",
             "title": "아메리카노",
             "children": [
                 {
+                    "pageId": "PAGE_KOREA_A_1",
                     "label": "설탕!!!!!",
                     "url": "./sub/korea/coffee1.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_KOREA_A_2",
                     "label": "설탕 두푼!!!!!!",
                     "url": "./sub/korea/coffee2.html",
                     "external": false,
@@ -327,21 +373,25 @@
             ]
         },
         {
+            "itemId": "GRP_KOREA_B",
             "title": "커피믹스",
             "children": [
                 {
+                    "pageId": "PAGE_KOREA_B_1",
                     "label": "모카골드",
                     "url": "./sub/coffee/coffee.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_KOREA_B_2",
                     "label": "화이트골드",
                     "url": "./sub/coffee/coffee.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_KOREA_B_3",
                     "label": "난맥심",
                     "url": "./sub/coffee/coffee.html",
                     "external": false,
@@ -351,12 +401,15 @@
         }]
     },
     {
+        "catId": "CAT_COLOMBIA_COFFEE",
         "category": "콜롬비아 커피",
         "items": [
         {
+            "itemId": "GRP_COLOMBIA_A",
             "title": "아메리카노",
             "children": [
                 {
+                    "pageId": "PAGE_COLOMBIA_A_1",
                     "label": "설탕",
                     "url": "./sub/coffee/coffee.html",
                     "external": false,
@@ -365,21 +418,25 @@
             ]
         },
         {
+            "itemId": "GRP_COLOMBIA_B",
             "title": "커피믹스",
             "children": [
                 {
+                    "pageId": "PAGE_COLOMBIA_A_2",
                     "label": "모카골드",
                     "url": "./sub/coffee/coffee.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_COLOMBIA_A_3",
                     "label": "화이트골드",
                     "url": "./sub/coffee/coffee.html",
                     "external": false,
                     "hidden" : false
                 },
                 {
+                    "pageId": "PAGE_COLOMBIA_A_4",
                     "label": "난맥심",
                     "url": "./sub/coffee/coffee.html",
                     "external": false,
@@ -389,12 +446,14 @@
         }]
     },
     {
+        "catId": "CAT_EX1",
         "category": "외부링크1",
         "url": "/dhlqn1/dhlqn1.html",
         "external": false,
         "hidden" : false
     },
     {
+        "catId": "CAT_EX2",
         "category": "외부링크2",
         "url": "/dhlqn2/dhlqn2.html",
         "external": true,

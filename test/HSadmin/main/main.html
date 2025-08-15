@@ -16,8 +16,8 @@
             </div>
 
             <ul style="margin-top: 30px;">
-                <button onclick="pramUrl('과일','사과','쨈',{popup:'fruits1Popup'})">과일/사과/쨈 + 팝업</button>
-                <button onclick="pramUrl({category:'만화',title:'명탐정 코난',child:'탐정 !!!!!!!!!',params:{tab:'만화 탭 333'}})">커피 탭 이동</button>
+                <button onclick="gotoPageUrl('CAT_FRUITS', 'GRP_BANANA', 'PAGE_BANANA_2')">과일>바나나>3바나나</button>
+                <button onclick="">커피>모카골드</button>
             </ul>
         </div>
 
@@ -39,7 +39,7 @@
             </div>
 
             <ul style="margin-top: 30px;">
-                <li><button type="button" style="background-color: blueviolet; color: #fff;">이동3</button></li>
+                <li><button type="button" onclick="gotoPageUrl('CAT_CAR', 'GRP_BMW', 'PAGE_BMW_OPTION2')" style="background-color: blueviolet; color: #fff;">자동차 > 에어컨</button></li>
             </ul>
         </div>
         <div class="main_item">item4</div>
@@ -61,13 +61,14 @@
     </section>
 </article>
 
-<div class="loading-wrap">
+<!-- 사용 안함 -->
+<!-- <div class="loading-wrap">
     <div class="loading-container">
         <div class="loading"></div>
         <i class="icon"><img src="icon_loading.png" alt=""></i>
         <div id="loading-text">loading</div>
     </div>
-</div>
+</div> -->
     
 
 <script>
