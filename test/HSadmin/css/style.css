@@ -1,6 +1,6 @@
 @charset "utf-8";
 @import url('reset.css');
-.hd { display: flex; width: 100%; padding: 10px 0; background-color: #00108b; }
+.hd { display: flex; align-items: center; padding: 10px; background-color: #00108b; }
 .hd h1 a { display: block; color: #fff; font-size: 30px; margin-left: 30px; width: calc(200px - 30px); }
 .hd ul { display: flex; align-items: center; }
 .hd ul li { margin: 0 10px; }
@@ -8,16 +8,79 @@
 .hd ul li.active { background-color: #fff; }
 .hd ul li.active a { color: #000; }
 
+
+
+
+
+
+
+
+.hd .admin { margin-left: auto; position: relative; text-align: right; }
+.hd .admin a.login_btn { color: #fff; } 
+.hd .admin ol {
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    top: 32px;
+    right: 0;
+    width: 100px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+.hd .admin ol li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.hd .admin ol li:last-child { border-bottom: 0; }
+.hd .admin ol li a {}
+
+.login_wrap { position: relative; height: 100vh; max-height: calc(100vh - 32px); background-image: url('../loginBG.png'); background-repeat: no-repeat; background-position: center; background-size: cover; display: flex; align-items: center; justify-content: center; }
+.login_wrap .login_content { width: 100%; max-width: 500px; }
+.login_wrap .login_content .login_titleCont { text-align: center; margin-bottom: 30px; }
+.login_wrap .login_content .login_titleCont h3 { color: #fff; max-width: 300px; margin: 0 auto 20px auto; }
+.login_wrap .login_content .login_titleCont h3 img { width: 100%; }
+.login_wrap .login_content .login_titleCont span { color: #fff; letter-spacing: 20px; }
+.login_wrap #loginForm { padding: 40px 20px 20px 20px; background-color: #fff; border: 1px solid #ebebeb; border-radius: 3px; box-shadow: rgba(0, 0, 0, 0.1) 4px 4px 5px 0px, rgba(0, 0, 0, 0.09) 0px 1px 2px 0px }
+.login_wrap #loginForm .form_row { position: relative; margin-bottom: 45px; }
+
+/* 인풋박스 */
+.login_wrap #loginForm .form_row input[type="text"], .login_wrap #loginForm .form_row input[type="password"] { font-size: 18px; width: calc(100% - 15px); padding: 10px 10px 10px 5px; -webkit-appearance: none; display: block; color: #636363; border: none; border-radius: 0; border-bottom: 1px solid #757575; }
+.login_wrap #loginForm .form_row input:focus { outline: none; }
+.login_wrap #loginForm .form_row.userInput label { color: #999; font-size: 18px; font-weight: normal; position: absolute; pointer-events: none; left: 5px; top: 10px; transition: all 0.2s ease; }
+.login_wrap #loginForm .form_row.userInput input:focus~label, .login_wrap #loginForm .form_row.userInput input.used~label { top: -20px; transform: scale(.75); left: -2px; color: #4a89dc; }
+.login_wrap #loginForm .form_row.userInput .bar { position: relative; display: block; width: 100%; }
+.login_wrap #loginForm .form_row.userInput .bar:before, .bar:after { content: ''; height: 2px; width: 0; bottom: 1px; position: absolute; background: #4a89dc; transition: all 0.2s ease; }
+.login_wrap #loginForm .form_row.userInput .bar::before { left: 50%; }
+.login_wrap #loginForm .form_row.userInput .bar::after { right: 50%; }
+.login_wrap #loginForm .form_row.userInput input:focus~.bar:before, .login_wrap #loginForm .form_row.userInput input:focus~.bar:after { width: 50%; }
+.login_wrap #loginForm .form_row.userInput .highlight { position: absolute; height: 60%; width: 100px; top: 25%; left: 0; pointer-events: none; opacity: 0.5; }
+.login_wrap #loginForm .form_row.userInput input:focus~.highlight { animation: inputHighlighter 0.3s ease; }
+@keyframes inputHighlighter {
+    from { background: #4a89dc; }
+    to { width: 0; background: transparent; }
+}
+/* //인풋박스 */
+
+/* 체크박스 */
+.login_wrap #loginForm .form_row .remember_check .rememberId_check { display: none; }
+.login_wrap #loginForm .form_row .remember_check label .icon { width: 15px; height: 15px; border-radius: 2px; position: relative; display: inline-block; background: rgb(0 0 0 / 10%); border: 1px solid #c9c9c9; }
+.login_wrap #loginForm .form_row .remember_check label .icon::before, .login_wrap #loginForm .form_row .remember_check label .icon::after { content: ''; width: 10px; height: 2px; background: #fff; position: absolute; transition: all .2s ease-in-out 0s; }
+.login_wrap #loginForm .form_row .remember_check label .icon::before { left: 3px; width: 5px; bottom: 6px; transform: scale(0) rotate(0); }
+.login_wrap #loginForm .form_row .remember_check label .icon::after { top: 6px; right: 0; transform: scale(0) rotate(0); }
+.login_wrap #loginForm .form_row .remember_check .rememberId_check:checked+label { color: #b32e2e; }
+.login_wrap #loginForm .form_row .remember_check .rememberId_check:checked+label .icon { background: #1161ee; }
+.login_wrap #loginForm .form_row .remember_check .rememberId_check:checked+label .icon::before { transform: scale(1) rotate(45deg); }
+.login_wrap #loginForm .form_row .remember_check .rememberId_check:checked+label .icon::after { transform: scale(1) rotate(-45deg); }
+/* //체크박스 */
+
+
+
+
+
+
 /*-------------------------------------------*/
 .new_container { display: flex; }
-.new_container > .sideMenu { 
-    /* flex: 1;  */
-    /* max-width: 200px;  */
-    position: relative;
-    width: 200px;
-    
-    transition: width 0.3s, margin-left 0.3s;
-}
+.new_container > .sideMenu { position: relative; width: 200px; transition: width 0.3s, margin-left 0.3s; }
 .new_container .sideMenu ul.category { }
 .new_container .sideMenu ul.category > li { }
 .new_container .sideMenu ul.category > li.active { }
@@ -31,45 +94,18 @@
 
 .new_container .sideMenu ul.category > li > ul li.active { background-color: #f1cccc; }
 
-.sideMenu.closed {
-    margin-left: -200px;
-}
+.sideMenu.closed { margin-left: -200px; }
 
 
-.sideMenu-toggle-wrap {
-    position: absolute;
-    top: 80px;
-    left: 200px;
-    z-index: 10;
-}
-.sideMenu-toggle {
-    cursor: pointer;
-    font-size: 18px;
-    background: #fff;
-    border: none;
-    border-bottom-left-radius: 0px;
-    border-top-left-radius: 0px;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    /* box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2); */
-    box-shadow: 3px 0 4px rgba(0,0,0,0.2);
-    width: 25px;
-    height: 50px;
-    transition: transform 0.3s;
-}
-.sideMenu.closed .sideMenu-toggle {
-    /* transform: rotate(180deg); */
-    background: #cb3737;
-}
+.sideMenu-toggle-wrap { position: absolute; top: 80px; left: 200px; z-index: 10; }
+.sideMenu-toggle { cursor: pointer; font-size: 18px; background: #fff; border: none; border-bottom-left-radius: 0px; border-top-left-radius: 0px; border-bottom-right-radius: 10px; border-top-right-radius: 10px; box-shadow: 3px 0 4px rgba(0, 0, 0, 0.2); width: 25px; height: 50px; transition: transform 0.3s; }
+
+.sideMenu.closed .sideMenu-toggle { background: #cb3737; }
 
 
 
 /*-------------------------------------------*/
-.new_content { 
-    flex: 1; 
-    /* width: 100%; */
-    transition: margin-left 0.3s, width 0.3s;
-}
+.new_content { flex: 1; transition: margin-left 0.3s, width 0.3s; }
 .new_content .breadcrumb { background-color: #fff; padding: 10px; }
 .new_content .breadcrumb ul { display: flex; }
 .new_content .breadcrumb ul li { position: relative; padding: 0 10px; }
@@ -95,10 +131,7 @@
 .new_content .sub_cont .inner .cont_area .tabel_cont table th {}
 .new_content .sub_cont .inner .cont_area .tabel_cont table td {}
 
-.new_content.expanded {
-    margin-left: 0 !important;
-    flex: 1;
-}
+.new_content.expanded { margin-left: 0 !important; flex: 1; }
 
 
 

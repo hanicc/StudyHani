@@ -360,19 +360,6 @@ function buildStandardQuery(catId, itemId, pageId, extraStr){
     return '?' + usp.toString() + tail;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /************************************************************
  * (NEW) URL Helper: 쿼리/해시 병합
  ************************************************************/
@@ -463,34 +450,6 @@ function appendExtraToUrl(baseUrl, extra){
 
     return finalUrl;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /************************************************************
  * 네비게이션 & 파라미터 전달 click이벤트
@@ -616,6 +575,51 @@ window.addEventListener('popstate', () => {
     }
 });
 
+// 어드민(환경설정)
+function insertAdminSection(mountSelector = '.hd') {
+    var $mount = $(mountSelector).first();
+    if (!$mount.length) return;
+  
+    if ($mount.children('section.admin').length) return;
+  
+    var html = [
+        '<section class="admin">',
+            '<a href="login.html" class="login_btn">환경설정</a>',
+                '<ol>',
+                '<li><a href="">관리자</a></li>',
+                '<li><a href="">위젯설정</a></li>',
+                '<li><a href="">로그아웃</a></li>',
+            '</ol>',
+        '</section>'
+    ].join('');
+    $mount.append(html);
+
+    var $btn = $('section.admin').find('.login_btn');
+    var $list = $('section.admin').find('ol');
+
+    $btn.on('click', function(e){
+        e.preventDefault();
+        // $('section.admin').find('ol').slideUp(100);
+        $list.stop(true, true).slideToggle(100);
+    });
+
+    // 바깥 클릭 시 닫기
+    $(document).off('click.adminOutside').on('click.adminOutside', function(e){
+        if (!$(e.target).closest('section.admin').length){
+            $('section.admin ol:visible').slideUp(100);
+        }
+    });
+
+    // ESC 로 닫기
+    $(document).off('keydown.adminEsc').on('keydown.adminEsc', function(e){
+        if (e.key === 'Escape'){
+            $('section.admin ol:visible').slideUp(140);
+        }
+    });
+}
+
+
+
 /************************************************************
  * 이벤트 바인딩
  ************************************************************/
@@ -654,6 +658,15 @@ $(document).on('click', '.goMain', function(e){
     e.preventDefault();
     showMainPage();
 });
+
+
+// 사용
+$(function(){
+    insertAdminSection();
+});
+
+
+
 
 
 

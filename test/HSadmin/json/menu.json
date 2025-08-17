@@ -5,11 +5,13 @@
         "label": "메인",
         "url": "./main/main.html",
         "type": "main",
-        "external": false
+        "external": false,
+        "hidden" : false
     },
     {
         "catId": "CAT_FRUITS",
         "category": "과일",
+        "hidden" : false,
         "items": [
         {
             "itemId": "GRP_APPLE",
@@ -103,6 +105,7 @@
     {
         "catId": "CAT_CAR",
         "category": "자동차",
+        "hidden" : false,
         "items": [
         {
             "itemId": "GRP_BMW",
@@ -135,6 +138,7 @@
     {
         "catId": "CAT_COMIC",
         "category": "만화",
+        "hidden" : false,
         "items": [
         {
             "itemId": "GRP_COMMIC_A",
@@ -261,6 +265,7 @@
     {
         "catId": "CAT_COFFEE",
         "category": "커피",
+        "hidden" : false,
         "items": [
         {
             "itemId": "GRP_COFFEE_A",
@@ -306,6 +311,7 @@
     {
         "catId": "CAT_ITALY_COFFEE",
         "category": "이탈리아 커피",
+        "hidden" : false,
         "items": [
         {
             "itemId": "GRP_ITALY_A",
@@ -351,6 +357,7 @@
     {
         "catId": "CAT_KOREA_COFFEE",
         "category": "한국 커피",
+        "hidden" : false,
         "items": [
         {
             "itemId": "GRP_KOREA_A",
@@ -403,6 +410,7 @@
     {
         "catId": "CAT_COLOMBIA_COFFEE",
         "category": "콜롬비아 커피",
+        "hidden" : false,
         "items": [
         {
             "itemId": "GRP_COLOMBIA_A",
