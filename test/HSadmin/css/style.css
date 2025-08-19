@@ -34,6 +34,10 @@
 .hd .admin ol li:last-child { border-bottom: 0; }
 .hd .admin ol li a {}
 
+
+
+
+
 .login_wrap { position: relative; height: 100vh; max-height: calc(100vh - 32px); background-image: url('../loginBG.png'); background-repeat: no-repeat; background-position: center; background-size: cover; display: flex; align-items: center; justify-content: center; }
 .login_wrap .login_content { width: 100%; max-width: 500px; }
 .login_wrap .login_content .login_titleCont { text-align: center; margin-bottom: 30px; }
@@ -41,15 +45,30 @@
 .login_wrap .login_content .login_titleCont h3 img { width: 100%; }
 .login_wrap .login_content .login_titleCont span { color: #fff; letter-spacing: 20px; }
 .login_wrap #loginForm { padding: 40px 20px 20px 20px; background-color: #fff; border: 1px solid #ebebeb; border-radius: 3px; box-shadow: rgba(0, 0, 0, 0.1) 4px 4px 5px 0px, rgba(0, 0, 0, 0.09) 0px 1px 2px 0px }
-.login_wrap #loginForm .form_row { position: relative; margin-bottom: 45px; }
+.login_wrap #loginForm .form_row { 
+    position: relative; 
+}
 
 /* 인풋박스 */
-.login_wrap #loginForm .form_row input[type="text"], .login_wrap #loginForm .form_row input[type="password"] { font-size: 18px; width: calc(100% - 15px); padding: 10px 10px 10px 5px; -webkit-appearance: none; display: block; color: #636363; border: none; border-radius: 0; border-bottom: 1px solid #757575; }
+.login_wrap #loginForm .form_row input[type="text"], .login_wrap #loginForm .form_row input[type="password"] { font-size: 16px; width: calc(100% - 15px); padding: 10px 10px 10px 5px; -webkit-appearance: none; display: block; color: #636363; border: none; border-radius: 0; border-bottom: 1px solid #757575; }
 .login_wrap #loginForm .form_row input:focus { outline: none; }
-.login_wrap #loginForm .form_row.userInput label { color: #999; font-size: 18px; font-weight: normal; position: absolute; pointer-events: none; left: 5px; top: 10px; transition: all 0.2s ease; }
+
+.login_wrap #loginForm .form_row.userInput:first-child {
+    margin-top: 0;
+}
+.login_wrap #loginForm .form_row.userInput {
+    position:relative;
+    margin-top: 45px;
+}
+
+.login_wrap #loginForm .form_row.userInput label { color: #999; font-size: 16px; font-weight: normal; position: absolute; pointer-events: none; left: 5px; top: 10px; transition: all 0.2s ease; }
 .login_wrap #loginForm .form_row.userInput input:focus~label, .login_wrap #loginForm .form_row.userInput input.used~label { top: -20px; transform: scale(.75); left: -2px; color: #4a89dc; }
 .login_wrap #loginForm .form_row.userInput .bar { position: relative; display: block; width: 100%; }
-.login_wrap #loginForm .form_row.userInput .bar:before, .bar:after { content: ''; height: 2px; width: 0; bottom: 1px; position: absolute; background: #4a89dc; transition: all 0.2s ease; }
+
+.login_wrap #loginForm .form_row.userInput .bar::before, .bar::after { 
+    content: ''; height: 2px; width: 0; bottom: 0px; position: absolute; background: #4a89dc; transition: all 0.2s ease; 
+}
+
 .login_wrap #loginForm .form_row.userInput .bar::before { left: 50%; }
 .login_wrap #loginForm .form_row.userInput .bar::after { right: 50%; }
 .login_wrap #loginForm .form_row.userInput input:focus~.bar:before, .login_wrap #loginForm .form_row.userInput input:focus~.bar:after { width: 50%; }
@@ -59,19 +78,71 @@
     from { background: #4a89dc; }
     to { width: 0; background: transparent; }
 }
+
+
+
+.login_wrap #loginForm .form_row.userInput .errInfo {
+    display: none;
+}
+.login_wrap #loginForm .form_row.userInput.required .errInfo {
+    display: block;
+    color: #f00;
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: right;
+}
+.login_wrap #loginForm .form_row.userInput.required input~label, 
+.login_wrap #loginForm .form_row.userInput.required input.used~label { 
+    top: -20px; transform: scale(.75); left: -2px; color: #f00; 
+}
+.login_wrap #loginForm .form_row.userInput.required .bar::before,
+.required .bar::after { 
+    content: ''; height: 2px; width: 0; bottom: 0px; position: absolute; background: #f00; transition: all 0.2s ease; 
+}
 /* //인풋박스 */
 
 /* 체크박스 */
-.login_wrap #loginForm .form_row .remember_check .rememberId_check { display: none; }
-.login_wrap #loginForm .form_row .remember_check label .icon { width: 15px; height: 15px; border-radius: 2px; position: relative; display: inline-block; background: rgb(0 0 0 / 10%); border: 1px solid #c9c9c9; }
-.login_wrap #loginForm .form_row .remember_check label .icon::before, .login_wrap #loginForm .form_row .remember_check label .icon::after { content: ''; width: 10px; height: 2px; background: #fff; position: absolute; transition: all .2s ease-in-out 0s; }
-.login_wrap #loginForm .form_row .remember_check label .icon::before { left: 3px; width: 5px; bottom: 6px; transform: scale(0) rotate(0); }
-.login_wrap #loginForm .form_row .remember_check label .icon::after { top: 6px; right: 0; transform: scale(0) rotate(0); }
-.login_wrap #loginForm .form_row .remember_check .rememberId_check:checked+label { color: #b32e2e; }
-.login_wrap #loginForm .form_row .remember_check .rememberId_check:checked+label .icon { background: #1161ee; }
-.login_wrap #loginForm .form_row .remember_check .rememberId_check:checked+label .icon::before { transform: scale(1) rotate(45deg); }
-.login_wrap #loginForm .form_row .remember_check .rememberId_check:checked+label .icon::after { transform: scale(1) rotate(-45deg); }
+.login_wrap #loginForm .remember_check { display: flex; margin-top: 30px; }
+.login_wrap #loginForm .remember_check input {}
+.login_wrap #loginForm .remember_check label {
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+    color: #727272;
+}
+.login_wrap #loginForm .remember_check .rememberId_check { display: none; }
+.login_wrap #loginForm .remember_check label .icon { width: 15px; height: 15px; border-radius: 2px; position: relative; display: inline-block; background: rgb(0 0 0 / 10%); border: 1px solid #c9c9c9; }
+.login_wrap #loginForm .remember_check label .icon::before, .login_wrap #loginForm .remember_check label .icon::after { content: ''; width: 10px; height: 2px; background: #fff; position: absolute; transition: all .2s ease-in-out 0s; }
+.login_wrap #loginForm .remember_check label .icon::before { left: 3px; width: 5px; bottom: 6px; transform: scale(0) rotate(0); }
+.login_wrap #loginForm .remember_check label .icon::after { top: 6px; right: 0; transform: scale(0) rotate(0); }
+.login_wrap #loginForm .remember_check .rememberId_check:checked+label { color: #261366; }
+.login_wrap #loginForm .remember_check .rememberId_check:checked+label .icon { background: #1161ee; }
+.login_wrap #loginForm .remember_check .rememberId_check:checked+label .icon::before { transform: scale(1) rotate(45deg); }
+.login_wrap #loginForm .remember_check .rememberId_check:checked+label .icon::after { transform: scale(1) rotate(-45deg); }
 /* //체크박스 */
+
+.login_wrap #loginForm .submitButton_cont {
+    margin-top: 60px;
+}
+.login_wrap #loginForm .submitButton_cont #loginSubmit {
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    border: 0;
+    background-color: #151d87;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50px;
+}
+.login_wrap #loginForm .pwForgot_cont {
+    text-align: center;
+    margin-top: 35px;
+}
+.login_wrap #loginForm .pwForgot_cont .forgot-btn {}
+
+
+
 
 
 

@@ -6,27 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     
-
-    <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css"> -->
     <link rel="stylesheet" href="css/style.css">
 
     <script  src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <!-- <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script> -->
-    <!-- <script src="js/main.js"></script> -->
     <script src="js/pub-admin.js"></script>
 </head>
 <body>
     <div class="wrap">
-        <!-- <div class="hd">
-            <h1><a href="/index.html" class="goMain">LOGO</a></h1>
-            <ul>
-            </ul>
-            <section class="loginMenu">
-                <a href="login.html" id="" class="login_btn">Login</a>
-            </section>
-        </div> -->
-
-
         <article class="login_wrap">
             
             <div class="login_content">
@@ -34,31 +20,32 @@
                     <h3><img src="HYOSUNG-TNS-CI_white.png" alt="HYOSUNG TNS-CI"></h3>
                     <span>LOGIN</span>
                 </div>
-                <form id="loginForm" action="/login" method="post">
+                <form id="loginForm" novalidate action="/login" method="post">
                     <!-- 아이디 -->
                     <section class="form_row userInput">
-                        
-                        <input type="text" id="loginId" name="username" required/><span class="highlight"></span><span class="bar"></span>
+                        <input type="text" id="loginId" name="loginId" required/><span class="highlight"></span><span class="bar"></span>
                         <label for="loginId">아이디</label>
+                        <span class="errInfo">아이디를 입력하세요.</span>
                     </section>
                 
                     <!-- 비밀번호 -->
-                    <section class="form_row userInput">
-                        
+                    <section class="form_row userInput" style="">
                         <input type="password" id="loginPw" name="password" required><span class="highlight"></span><span class="bar"></span>
                         <label for="loginPw">비밀번호</label>
+                        <span class="errInfo">비밀번호를 입력하세요.</span>
                     </section>
                 
                     <!-- 아이디 저장 -->
-                    <section class="form_row">
-                        <div class="remember_check">
-                            <input type="checkbox" id="rememberId" class="rememberId_check" name="rememberId" value="" />
-                            <label for="rememberId" class="textInput"><span class="icon"></span> 아이디 저장</label>
-                        </div>
-                    </section>
+                    <div class="remember_check">
+                        <input type="checkbox" id="rememberIdCheck" class="rememberId_check" />
+                        <label for="rememberIdCheck">
+                          <span class="icon"></span>
+                          아이디 저장
+                        </label>
+                    </div>
                 
                     <!-- 로그인 버튼 -->
-                    <section class="form_row">
+                    <section class="submitButton_cont">
                         <button type="submit" id="loginSubmit">로그인</button>
                     </section>
                     <section class="pwForgot_cont">

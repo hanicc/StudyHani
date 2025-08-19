@@ -5,8 +5,7 @@
         "label": "메인",
         "url": "./main/main.html",
         "type": "main",
-        "external": false,
-        "hidden" : false
+        "external": false
     },
     {
         "catId": "CAT_FRUITS",
@@ -16,6 +15,7 @@
         {
             "itemId": "GRP_APPLE",
             "title": "사과",
+            "hidden" : false,
             "children": [
                 {
                     "pageId": "PAGE_APPLE_JAM",
@@ -43,13 +43,14 @@
         {
             "itemId": "GRP_BANANA",
             "title": "바나나",
+            "hidden" : false,
             "children": [
                 {
                     "pageId": "PAGE_BANANA_1",
                     "label": "222바나나",
                     "url": "./sub/fruits/fruits3.html",
                     "external": false,
-                    "hidden" : false
+                    "hidden" : true
                 },
                 {
                     "pageId": "PAGE_BANANA_2",
@@ -70,6 +71,7 @@
         {
             "itemId": "GRP_MELLON",
             "title": "메론",
+            "hidden" : false,
             "children": [
                 {
                     "pageId": "PAGE_MELLON_1",
@@ -110,6 +112,7 @@
         {
             "itemId": "GRP_BMW",
             "title": "BMW",
+            "hidden" : false,
             "children": [
                 {
                     "pageId": "PAGE_BMW_OPTION1",
@@ -143,6 +146,7 @@
         {
             "itemId": "GRP_COMMIC_A",
             "title": "귀멸의 칼날",
+            "hidden" : false,
             "children": [
                 {
                     "pageId": "PAGE_COMMIC_A_1",
@@ -170,6 +174,7 @@
         {
             "itemId": "GRP_COMMIC_B",
             "title": "명탐정 코난",
+            "hidden" : false,
             "children": [
                 {
                     "pageId": "PAGE_COMMIC_B_1",
@@ -197,6 +202,7 @@
         {
             "itemId": "GRP_COMMIC_C",
             "title": "드래곤볼",
+            "hidden" : false,
             "children": [
                 {
                     "pageId": "PAGE_COMMIC_C_1",
@@ -224,6 +230,7 @@
         {
             "itemId": "GRP_COMMIC_D",
             "title": "용의아들",
+            "hidden" : false,
             "children": [
                 {
                     "pageId": "PAGE_COMMIC_D_1",
@@ -237,6 +244,7 @@
         {
             "itemId": "GRP_COMMIC_F",
             "title": "삼국지",
+            "hidden" : false,
             "children": [
                 {
                     "pageId": "PAGE_COMMIC_F_1",
@@ -270,6 +278,7 @@
         {
             "itemId": "GRP_COFFEE_A",
             "title": "아메리카노",
+            "hidden" : false,
             "children": [
                 {
                     "pageId": "PAGE_COFFEE_A_1",
@@ -283,6 +292,7 @@
         {
             "itemId": "GRP_COFFEE_B",
             "title": "커피믹스",
+            "hidden" : false,
             "children": [
                 {
                     "pageId": "PAGE_COFFEE_B_1",
@@ -316,6 +326,7 @@
         {
             "itemId": "GRP_ITALY_A",
             "title": "아메리카노",
+            "hidden" : false,
             "children": [
                 {
                     "pageId": "PAGE_ITALY_A_1",
@@ -329,6 +340,7 @@
         {
             "itemId": "GRP_ITALY_B",
             "title": "미국 커피믹스",
+            "hidden" : false,
             "children": [
                 {
                     "pageId": "PAGE_ITALY_B_1",
@@ -362,6 +374,7 @@
         {
             "itemId": "GRP_KOREA_A",
             "title": "아메리카노",
+            "hidden" : false,
             "children": [
                 {
                     "pageId": "PAGE_KOREA_A_1",
@@ -382,6 +395,7 @@
         {
             "itemId": "GRP_KOREA_B",
             "title": "커피믹스",
+            "hidden" : false,
             "children": [
                 {
                     "pageId": "PAGE_KOREA_B_1",
@@ -415,6 +429,7 @@
         {
             "itemId": "GRP_COLOMBIA_A",
             "title": "아메리카노",
+            "hidden" : false,
             "children": [
                 {
                     "pageId": "PAGE_COLOMBIA_A_1",
@@ -428,6 +443,7 @@
         {
             "itemId": "GRP_COLOMBIA_B",
             "title": "커피믹스",
+            "hidden" : false,
             "children": [
                 {
                     "pageId": "PAGE_COLOMBIA_A_2",

@@ -1,6 +1,5 @@
-/************************************************************
- * 전역 상태
- ************************************************************/
+// console.log('[main.js] loaded, history.length=', history.length);
+
 let menuData = [];
 const menuIndex = { categories:{}, items:{}, pages:{} };
 let currentState = { catId:null, itemId:null, pageId:null, urlExtra:null };
@@ -10,8 +9,12 @@ const pendingNavigations = [];
 
 //URL 쿼리 정책 설정
 const URL_PARAM_POLICY = {
-    clearWhenNoExtra: true, // 메뉴 클릭(=extra 없음) 시 주소창 쿼리 제거
-    usePushState: false // true면 pushState, false면 replaceState
+    clearWhenNoExtra: true, // true면 메뉴 클릭(=extra 없음) 시 주소창(파리미터 주소) 삭제
+    usePushState: true 
+    /** 
+     * false면 replaceState(false) : 현재 History entry를 덮어씀 > 뒤로가기 누르면 이전 페이지로
+     * true면 pushState(true) : 새 History entry 추가 > 뒤로가기 누르면 이전 상태로 돌아감.
+    */
 };
 
 /************************************************************
@@ -139,64 +142,6 @@ function renderSideMenuByCatId(catId){
 }
 
 /************************************************************
- * 사이드 메뉴 렌더
- ************************************************************/
-function renderSideMenuByCatId(catId){
-    const cat = menuIndex.categories[catId];
-    const $sideMenuContainer = ensureSideMenu();
-    if (!cat || !Array.isArray(cat.items)){
-        $sideMenuContainer.empty();
-        return;
-    }
-
-    const html = `
-        <div class="sideMenu-toggle-wrap">
-            <button type="button" class="sideMenu-toggle" aria-label="사이드메뉴 접기/펼치기">
-                <i class="icon_arrow_1"></i>
-            </button>
-        </div>
-        <ul class="category" data-expanded="all">
-            ${cat.items.map(item => {
-                if (item.hidden) return '';
-                const childrenHtml = (item.children || [])
-                    .filter(ch => ch.hidden !== true)
-                    .map(ch => `
-                        <li>
-                            <a href="${ch.external ? ch.url : '#'}"
-                               ${ch.external ? 'target="_blank" rel="noopener"' : ''}
-                               data-item-id="${item.itemId}"
-                               data-page-id="${ch.pageId}">
-                               ${ch.label}
-                            </a>
-                        </li>
-                    `).join('');
-                return `
-                    <li>
-                        <p class="sideBt">
-                            <span class="icon"></span>
-                            <button type="button" data-item-id="${item.itemId}" aria-expanded="true">
-                                ${item.title}
-                            </button>
-                        </p>
-                        <ul>${childrenHtml}</ul>
-                    </li>
-                `;
-            }).join('')}
-        </ul>
-    `;
-    $sideMenuContainer.html(html);
-
-    // 모든 아코디언 펼침
-    const $cat = $('.sideMenu .category');
-    if ($cat.data('expanded') === 'all'){
-        $cat.children('li')
-            .addClass('active')
-            .find('.sideBt button')
-            .attr('aria-expanded', 'true');
-    }
-}
-
-/************************************************************
  * 레이아웃 요소
  ************************************************************/
 function ensureLayoutElements(){
@@ -250,6 +195,7 @@ function applyActiveStates(){
     }
 
     // 사이드 아이템
+    // $('.sideMenu .category > li').removeClass('active'); //선택된 메뉴만 펼쳐짐 : 사용 안함
     if (currentState.itemId){
         $(`.sideMenu .category > li .sideBt button[data-item-id="${currentState.itemId}"]`)
             .closest('li').addClass('active');
@@ -553,24 +499,34 @@ window.gotoPageUrl = function(catId, itemId, pageId, extra){
             extra: currentState.urlExtra
         };
         if (URL_PARAM_POLICY.usePushState){
+            console.log("11111")
             history.pushState(stateData, '', newUrl);
         } else {
+            console.log("11111_11111")
+            // 파라미터가 붙어있는 버튼을 클릭했을때
             history.replaceState(stateData, '', newUrl);
         }
     } else if (URL_PARAM_POLICY.clearWhenNoExtra && location.search){
+        console.log("222222");
+        // 파라미터가 붙어있는 url상태에서 다른 메뉴 접근시 파라미터 제거
         history.replaceState(null, '', location.pathname); // 쿼리 제거 (메뉴 클릭 / extra 미전달 흐름)
     }
 };
 
 /************************************************************
- * (NEW) popstate 처리 (뒤/앞 이동 지원) - 선택 기능
- * 필요 없으면 제거 가능
+ * popstate 처리 (뒤/앞 이동 지원) - 선택 기능
+ * 작동 안됨
  ************************************************************/
 window.addEventListener('popstate', () => {
+    console.log("bbbbb_bbbbb");
     const parsed = parseStandardQuery();
     if (parsed){
+        console.log("bbbbb");
+        // location.search 안에 ?catId=...&itemId=...&pageId=... 형태(세 값 모두 존재)가 있어서 parseStandardQuery()가 유효 객체 반환.
         gotoPageUrl(parsed.catId, parsed.itemId, parsed.pageId, parsed.extra || '');
     } else if (URL_PARAM_POLICY.clearWhenNoExtra){
+        console.log("222222_22222");
+        // 쿼리에 3대 키(catId,itemId,pageId)가 완성형으로 없어서 parseStandardQuery()가 null → 메인화면(showMainPage) 복원 로직 실행.
         showMainPage();
     }
 });
