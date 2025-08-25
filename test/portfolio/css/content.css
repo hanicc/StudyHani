@@ -1,0 +1,257 @@
+/* Icons */
+.icon-close {
+	
+}
+
+.icon-close1 {
+	z-index: 100;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap; 
+	width: 88px;
+	height: 88px;
+	text-align: center;
+	cursor: pointer;
+	position: fixed;
+	top: 30px;
+	right: 30px;
+	background-image:url(/img/main/cross1.png);
+	background-repeat:no-repeat;
+	background-position:0px 0px;
+}
+
+
+/* Style for overlay */
+.content-style-overlay {text-align: center; position: relative;}
+
+/* Style for text modal */
+.content-style-text {padding: 60px; text-align: left;}
+.content-style-text .icon-close1 {top: 0; right: 0;}
+
+
+
+
+.port_txtArea{
+	color:#fff; 
+	padding: 200px 0 100px 0;
+}
+
+.port_txt{width: 40%; margin: 0 auto;}
+.port_txt h2{
+	font-size: 40px; 
+	font-weight: 600; 
+	margin-bottom: 20px;
+}
+
+.port_field{
+	font-size: 19px; 
+	letter-spacing: 4px;
+	margin-bottom: 40px;
+	font-family: 'SourceSansPro-Regular', sans-serif;
+}
+
+.port_info{
+	font-size: 13px;
+	line-height: 21px;
+	margin-bottom:50px; 
+	color: #fff;
+}
+
+
+.port_viewBtn{}
+.port_viewBtn a{
+	font-family:'SourceSansPro-Regular', sans-serif;
+    display: inline-block;
+    background-color: rgba(29, 29, 29, 0);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: #fff;
+    padding: 10px 90px;
+    font-size: 14px;
+	letter-spacing: 3px;
+	text-decoration:none;
+
+	transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+.port_viewBtn a:hover{
+	background-color:#191919;
+	border: 1px solid #191919;
+	color:#fff;
+}
+
+
+
+
+
+.port_bottom_btn{
+	display: inline-block; 
+	padding: 100px 0; 
+	width:100%; 
+	text-align: center; 
+	background-color: #fff;
+}
+.port_bottom_btn p{
+	display: inline-block;
+	text-align: center;
+	margin: 0 5px;
+}
+
+.port_viewBtn1{}
+.port_viewBtn1 a{
+	font-family: 'SourceSansPro-Regular', sans-serif;
+    display: block;
+    border: 1px solid #a5a5a5;
+    color: #909090;
+    width: 240px;
+    height: 40px;
+    line-height: 37px;
+    margin: 0 auto;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-decoration: none;
+
+	transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+.port_viewBtn2 a:hover{
+	background-color:#191919;
+	border: 1px solid #191919;
+	color:#fff;
+}
+
+.port_viewBtn2{text-align: center;}
+.port_viewBtn2 a{
+	font-family: 'SourceSansPro-Regular', sans-serif;
+    display: block;
+    border: 1px solid #a5a5a5;
+    color: #909090;
+    width: 240px;
+    height: 40px;
+    line-height: 37px;
+    margin: 0 auto;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-decoration: none;
+
+	transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+
+
+
+/*�ы듃�댁씠�� �곸꽭 ���� 移쇰씪*/
+.p_color0{background-color:#35b1db;}
+.p_color1{background-color:#ca4857;}
+.p_color2{background-color:#ea8432;}
+.p_color3{background-color:#7dad5f;}
+.p_color4{
+	background: rgb(127,73,157);
+	background: -moz-linear-gradient(-45deg,  rgba(127,73,157,1) 0%, rgba(73,120,167,1) 50%, rgba(19,166,176,1) 100%);
+	background: -webkit-linear-gradient(-45deg,  rgba(127,73,157,1) 0%,rgba(73,120,167,1) 50%,rgba(19,166,176,1) 100%);
+	background: linear-gradient(135deg,  rgba(127,73,157,1) 0%,rgba(73,120,167,1) 35%,rgba(19,166,176,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7f499d', endColorstr='#13a6b0',GradientType=1 );
+}
+.p_color5{background-color:#ee7d2f;}
+.p_color6{background-color:#0c1433;}
+.p_color7{background-color:#74aeda;}
+.p_color8{background-color:#ea4d73;}
+.p_color9{
+	background: #ffa12a;
+	background: -moz-linear-gradient(-45deg,  hsla(34,100%,58%,1) 0%, hsla(228,79%,24%,1) 100%);
+	background: -webkit-linear-gradient(-45deg,  hsla(34,100%,58%,1) 0%,hsla(228,79%,24%,1) 100%);
+	background: linear-gradient(135deg,  hsla(34,100%,58%,1) 0%,hsla(228,79%,24%,1) 25%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa12a', endColorstr='#0d206d',GradientType=1 );
+}
+.p_color12{background-color: #b3911e;}
+.p_color13{background-color: #f89631;}
+.p_color14{background-color: #5f140e;}
+.p_color15{background-color: #142d3e;}
+.p_color16{background-color: #0d2f2e;}
+
+.p_color17{background-color: #032042;}
+
+
+
+
+@media screen and (max-width: 1366px) { /* �명듃遺� �댁긽�� */
+	/* �ы듃�대━�� */
+	
+}
+
+
+@media screen and (max-width: 1024px) { /* �꾩씠�⑤뱶 媛�濡� �댁긽��*/
+	/* �ы듃�대━�� */
+	
+}
+
+@media screen and (max-width: 768px) { /* �꾩씠�⑤뱶 */
+	/* �ы듃�대━�� */
+	.port_txtArea{padding: 150px 0 100px 0;}
+	.port_txt{width:60%;}
+}
+
+
+@media screen and (max-width: 667px) { /*�꾩씠�� 媛�濡� �댁긽��*/
+	/* �ы듃�대━�� */
+	.icon-close1{
+		width:25px;
+		height:25px;
+		background-image: url(/img/main/cross2.png);
+		background-repeat:no-repeat;
+		background-position:center center;
+	}
+
+}
+
+@media screen and (max-width: 414px){ /*�꾩씠�컎 媛�濡� �댁긽��*/
+	.port_viewBtn1{
+		padding: 10px 20px;
+		width: 100px; 
+		font-size: 12px; 
+		margin: 0px 1px;
+	}
+	.port_viewBtn2 a{
+		padding: 10px 20px;
+		width: 100px; 
+		font-size: 12px; 
+	}
+}
+
+
+@media screen and (max-width: 375px) { /* �꾩씠�� */
+	.port_txtArea{padding:90px 0 50px 0;}
+	.port_txt{width:90%;}
+	.port_txt h2{font-size:30px; margin-bottom:10px;}
+	.port_field{font-size:18px; margin-bottom:30px;}
+	.port_viewBtn a{padding:10px 70px;}
+
+	.port_bottom_btn{padding:70px 0;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

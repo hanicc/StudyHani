@@ -1,0 +1,923 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
+<!--[if IE]><script type="text/javascript" src="js/ie.js"></script><![endif]--> 
+<title>HANI.C</title>
+
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/content.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.scrollAnimations.min.js"></script>
+<!--해드,네비게이션 스크립트-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/animated-header.js"></script>
+
+<!--포트폴리오 스크립트-->
+<script type="text/javascript" src="js/modernizr.custom.js"></script>
+<script type="text/javascript" src="js/classie.js"></script>
+<script type="text/javascript" src="js/uiMorphingButton_fixed.js"></script>
+<script type="text/javascript" src="js/jquery.word-break-keep-all.min.js"></script>
+
+
+
+
+
+
+<script>
+$(document).ready(function(){
+	$('.port_info,.skill_t').wordBreakKeepAll();
+});
+</script>
+
+</head>
+<body>
+
+<div class="main_wrap">
+	<section id="header">
+		<header id="header-inner">
+			<h1><a href="#"><img src="img/main/logo_hanic.png" alt="로고"></a></h1>
+
+			<ul id="header-inner-nav">
+				<li data-button="1">HOME</li>
+				<li data-button="2">PORTFOLIO</li>
+				<li data-button="3">RESPONSIVE WEB</li>
+				<!-- <li data-button="4">MOBILE</li> -->
+				<li data-button="5">ABOUT</li>
+			</ul>
+
+
+			<!-- 모바일 메뉴 -->
+			<button id="trigger-overlay" type="button">
+				<i class="fa fa-bars s_menu" aria-hidden="true"><span>메뉴</span></i>
+			</button>
+			<!-- open/close -->
+			<div class="overlay overlay-hugeinc">
+				<button type="button" class="overlay-close">Close</button>
+				<nav>
+					<ul>
+						<li data-button="1">HOME</li>
+						<li data-button="2">PORTFOLIO</li>
+						<li data-button="3">RESPONSIVE WEB</li>
+						<!-- <li data-button="4">MOBILE</li> -->
+						<li data-button="5">ABOUT</li>
+					</ul>
+				</nav>
+			</div>
+			<script src="js/mobile_menu.js"></script>
+
+		</header>
+	</section>
+
+
+
+
+
+
+<!---------------------------------------------- 메인visual -------------------------------------------------->	
+	<section class="" data-section="1" style="position: relative;">
+		<img style="width:100%;" src="img/main/main1_bg.jpg" alt="메인">
+	</section>
+
+
+
+
+
+
+<!---------------------------------------------- 스킬 컨텐츠 -------------------------------------------------->
+	<section class="main_skill" data-animation-container>
+		<ul>
+			<li data-animation="fadeInUp">
+				<div class="skill_img"><img src="img/main/main_skill1.png" alt="웹 디자인"></div>
+				<div class="skill_txt">
+					<h3>WEB DESIGN</h3>
+					<p class="skill_mak"></p>
+					<p class="skill_t">새로운 시도와 완성도 높은 디자인을 추구합니다.</p>
+				</div>
+			</li>
+			<li data-animation="fadeInUp" data-animation-delay="300ms">
+				<div class="skill_img"><img src="img/main/main_skill2.png" alt="퍼블리싱"></div>
+				<div class="skill_txt">
+					<h3>PUBLISHING</h3>
+					<p class="skill_mak"></p>
+					<p class="skill_t">멈춰있지 않고 트렌드에 맞는 소스를 연구합니다.</p>
+				</div>
+			</li>
+			<li data-animation="fadeInUp" data-animation-delay="600ms">
+				<div class="skill_img"><img src="img/main/main_skill3.png" alt="기획"></div>
+				<div class="skill_txt">
+					<h3>UX/UI DESIGN</h3>
+					<p class="skill_mak"></p>
+					<p class="skill_t">단순하면서도 효과적인 UX/UI를 설계합니다.</p>
+				</div>
+			</li>
+			<li data-animation="fadeInUp" data-animation-delay="900ms">
+				<div class="skill_img"><img src="img/main/main_skill4.png" alt="UX/UI디자인"></div>
+				<div class="skill_txt">
+					<h3>WEB PLANNING</h3>
+					<p class="skill_mak"></p>
+					<p class="skill_t">목적에 적합한 홈페이지를 기획합니다.</p>
+				</div>
+			</li>
+		</ul>
+	</section>
+
+
+
+
+
+<!---------------------------------------------- 포트폴리오 컨텐츠 -------------------------------------------------->
+	<section class="main_portfolio" data-section="2">
+		<ul class="main_port">
+			
+			<li>
+				<div class="morph-button morph-button-overlay morph-button-fixed">
+					<figure class="effect-bubba">
+						<img src="img/portfolio/1/main_port1.jpg" alt="">
+						<figcaption>
+							<h2>청와대(국문)</h2>
+							<p>Design + Publishing</p>
+						</figcaption>			
+					</figure>
+					<div class="morph-content icon-close">
+						<div>
+							<div class="content-style-overlay p_color17">
+								<span class="icon icon-close icon-close1">Close the overlay</span>
+								<div class="port_txtArea">
+									<section class="port_txt">
+										<h2>청와대(국문)</h2>
+										<p class="port_field">Web Design + Publishing</p>
+										<p class="port_info">
+											디자인(60%),퍼블리싱(70%) 참여<br/>
+											웹표준인증마크 획득
+										</p>
+										<p class="port_viewBtn"><a href="https://web.archive.org/web/20211229061723/http://www.president.go.kr/" target="_blank">SITE VIEW</a></p>
+									</section>
+								</div>
+
+								<p><img src="img/portfolio/1/port0_1.png" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/1/1.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/1/2.jpg" style="width:100%;" alt=""/></p>
+
+								<div class="port_bottom_btn">
+									<div class="port_viewBtn2"><a href="https://web.archive.org/web/20211229061723/http://www.president.go.kr/" target="_blank">SITE VIEW</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li>
+				<div class="morph-button morph-button-overlay morph-button-fixed">
+					<figure class="effect-bubba">
+						<img src="img/portfolio/2/main_port2.jpg" alt="">
+						<figcaption>
+							<h2>청와대(영문)</h2>
+							<p>Design + Publishing</p>
+						</figcaption>			
+					</figure>
+					<div class="morph-content icon-close">
+						<div>
+							<div class="content-style-overlay p_color17">
+								<span class="icon icon-close icon-close1">Close the overlay</span>
+								<div class="port_txtArea">
+									<section class="port_txt">
+										<h2>청와대(영문)</h2>
+										<p class="port_field">Web Design + Publishing</p>
+										<p class="port_info">디자인(100%),퍼블리싱(100%) 참여</p>
+										<p class="port_viewBtn"><a href="https://web.archive.org/web/20211229061723/http://english.president.go.kr/" target="_blank">SITE VIEW</a></p>
+									</section>
+								</div>
+
+								<p><img src="img/portfolio/2/port0_1.png" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/2/1.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/2/2.jpg" style="width:100%;" alt=""/></p>
+
+								<div class="port_bottom_btn">
+									<div class="port_viewBtn2"><a href="https://web.archive.org/web/20211229061723/http://english.president.go.kr/" target="_blank">SITE VIEW</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li>
+				<div class="morph-button morph-button-overlay morph-button-fixed">
+					<figure class="effect-bubba">
+						<img src="img/portfolio/3/main_port3.jpg" alt="">
+						<figcaption>
+							<h2>한국도로공사50주년<br/>홈페이지</h2>
+							<p>Design + Publishing</p>
+						</figcaption>			
+					</figure>
+					<div class="morph-content icon-close">
+						<div>
+							<div class="content-style-overlay p_color13">
+								<span class="icon icon-close icon-close1">Close the overlay</span>
+								<div class="port_txtArea">
+									<section class="port_txt">
+										<h2>한국도로공사50주년 홈페이지</h2>
+										<p class="port_field">Web Design + Publishing</p>
+										<p class="port_info">디자인(100%),퍼블리싱(100%) 참여</p>
+										<p class="port_viewBtn"><a href="https://web.archive.org/web/20211229061723/http://www.ex50.co.kr/" target="_blank">SITE VIEW</a></p>
+									</section>
+								</div>
+
+								<p><img src="img/portfolio/3/port0_1.png" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/3/1.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/3/2.jpg" style="width:100%;" alt=""/></p>
+
+								<div class="port_bottom_btn">
+									<div class="port_viewBtn1"><a href="https://web.archive.org/web/20211229061723/http://www.ex50.co.kr/" target="_blank">SITE VIEW</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li><!-- 0번 -->
+                <div class="morph-button morph-button-overlay morph-button-fixed">		
+					<figure class="effect-bubba">
+						<img src="img/main/main_port0.jpg" alt="">
+						<figcaption>
+							<h2>코리아투어카드</h2>
+							<p>publishing</p>
+						</figcaption>			
+					</figure>
+					<div class="morph-content icon-close">
+						<div>
+							<div class="content-style-overlay p_color0">
+								<span class="icon icon-close icon-close1">Close the overlay</span>
+								<div class="port_txtArea">
+									<section class="port_txt">
+										<h2>코리아투어카드</h2>
+										<p class="port_field">Publishing</p>
+										<p class="port_info">한국의 주변 여행지를 외국인에게 카드 하나로 여러곳의 혜택 정보를 알수있는 관공서 홈페이지<br/>
+										그누보드 기반 베이스로 관리자 페이지와 PC&MOBILE; 페이지 퍼블리싱 제작</p>
+										<p class="port_viewBtn"><a href="https://web.archive.org/web/20211229061723/http://www.koreatourcard.kr/" target="_blank">SITE VIEW</a></p>
+									</section>
+								</div>
+
+								<p><img src="img/portfolio/port0_1.png" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port0_2.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port0_3.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port0_4.jpg" style="width:100%;" alt=""/></p>
+								<div class="port_bottom_btn">
+									<div class="port_viewBtn2"><a href="https://web.archive.org/web/20211229061723/http://www.koreatourcard.kr/" target="_blank">SITE VIEW</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			
+			<li>
+                <div class="morph-button morph-button-overlay morph-button-fixed">
+					<figure class="effect-bubba">
+						<img src="img/main/main_port1.jpg" alt="">
+						<figcaption>
+							<h2>Nexis</h2>
+							<p>publishing</p>
+						</figcaption>			
+					</figure>
+					<div class="morph-content icon-close">
+						<div>
+							<div class="content-style-overlay p_color1">
+								<span class="icon icon-close icon-close1">Close the overlay</span>
+								<div class="port_txtArea">
+									<section class="port_txt">
+										<h2>넥시스</h2>
+										<p class="port_field">Publishing</p>
+										<p class="port_info">가구 브랜드 제품 제조및 유통업체 홈페이지<br/>
+										그누보드 기반 베이스로 관리자 페이지와 PC&MOBILE; 페이지 퍼블리싱 제작</p>
+										<p class="port_viewBtn"><a href="https://web.archive.org/web/20211229061723/http://www.dynexis.co.kr/" target="_blank">SITE VIEW</a></p>
+									</section>
+								</div>
+
+								<p><img src="img/portfolio/port1_1.png" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port1_2.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port1_3.jpg" style="width:100%;" alt=""/></p>
+								<div class="port_bottom_btn">
+									<div class="port_viewBtn2"><a href="https://web.archive.org/web/20211229061723/http://www.dynexis.co.kr/" target="_blank">SITE VIEW</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li>
+				<div class="morph-button morph-button-overlay morph-button-fixed">			
+                    <figure class="effect-bubba">
+						<img src="img/main/main_port2.jpg" alt="">
+						<figcaption>
+							<h2>세별자산관리</h2>
+							<p>Publishing</p>
+						</figcaption>			
+					</figure>
+					<div class="morph-content icon-close">
+						<div>
+							<div class="content-style-overlay p_color2">
+								<span class="icon icon-close icon-close1">Close the overlay</span>
+								<div class="port_txtArea">
+									<section class="port_txt">
+										<h2>세별자산관리</h2>
+										<p class="port_field">Publishing</p>
+										<p class="port_info">건물관리 및 부동산 홈페이지<br/>
+										그누보드 기반 베이스로 관리자 페이지와 PC&MOBILE; 페이지 퍼블리싱 제작</p>
+										<p class="port_viewBtn"><a href="https://web.archive.org/web/20211229061723/http://www.three-star.co.kr/" target="_blank">SITE VIEW</a></p>
+									</section>
+								</div>
+
+								<p><img src="img/portfolio/port2_1.png" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port2_2.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port2_3.jpg" style="width:100%;" alt=""/></p>
+
+								<div class="port_bottom_btn">
+									<div class="port_viewBtn2"><a href="https://web.archive.org/web/20211229061723/http://www.three-star.co.kr/" target="_blank">SITE VIEW</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li>
+				<div class="morph-button morph-button-overlay morph-button-fixed">
+					<figure class="effect-bubba">
+						<img src="img/main/main_port3.jpg" alt="">
+						<figcaption>
+							<h2>Mizend</h2>
+							<p>Publishing</p>
+						</figcaption>			
+					</figure>
+					<div class="morph-content icon-close">
+						<div>
+							<div class="content-style-overlay p_color3">
+								<span class="icon icon-close icon-close1">Close the overlay</span>
+								<div class="port_txtArea">
+									<section class="port_txt">
+										<h2>Mizend</h2>
+										<p class="port_field">Publishing</p>
+										<p class="port_info">가구 브랜드 제품 제조및 유통업체 홈페이지<br/>
+										그누보드 기반 베이스로 관리자 페이지와 PC&MOBILE; 페이지 퍼블리싱<br/>부분적인 페럴렉스 형태로 제작</p>
+										<p class="port_viewBtn"><a href="https://web.archive.org/web/20211229061723/http://www.mizend.com/" target="_blank">SITE VIEW</a></p>
+									</section>
+								</div>
+
+								<p><img src="img/portfolio/port3_1.png" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port3_2.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port3_3.jpg" style="width:100%;" alt=""/></p>
+
+								<div class="port_bottom_btn">
+									<div class="port_viewBtn2"><a href="https://web.archive.org/web/20211229061723/http://www.mizend.com/" target="_blank">SITE VIEW</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li>
+				<div class="morph-button morph-button-overlay morph-button-fixed">
+					<figure class="effect-bubba">
+						<img src="img/main/main_port4.jpg" alt="">
+						<figcaption>
+							<h2>Doctormam &amp; Doctorbebe</h2>
+							<p>Publishing + Design</p>
+						</figcaption>			
+					</figure>
+					<div class="morph-content icon-close">
+						<div>
+							<div class="content-style-overlay p_color4">
+								<span class="icon icon-close icon-close1">Close the overlay</span>
+								<div class="port_txtArea">
+									<section class="port_txt">
+										<h2>Doctormam &amp; Doctorbebe</h2>
+										<p class="port_field">Publishing + Design</p>
+										<p class="port_info">산모도우미 &amp; 베이비시터 파견 업체 홈페이지<br/>
+										기존 디자인된 홈페이지를 일부 리뉴얼 하여 그누보드 기반으로 새롭게 관리자 페이지를 형성하였고<br/>
+										관리자, PC&MOBILE; 페이지 퍼블리싱 제작</p>
+										<p class="port_viewBtn"><a href="https://web.archive.org/web/20211229061723/http://www.doctormam.com/" target="_blank">SITE VIEW</a></p>
+									</section>
+								</div>
+
+								<p><img src="img/portfolio/port4_1.png" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port4_2.jpg" style="width:100%;" alt=""/></p>
+
+								<div class="port_bottom_btn">
+									<div class="port_viewBtn2"><a href="https://web.archive.org/web/20211229061723/http://www.doctormam.com/" target="_blank">SITE VIEW</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+
+			
+			<li>
+				<div class="morph-button morph-button-overlay morph-button-fixed">
+					<figure class="effect-bubba">
+						<img src="img/main/main_port5.jpg" alt="">
+						<figcaption>
+							<h2>Ijam</h2>
+							<p>Design + Publishing</p>
+						</figcaption>			
+					</figure>
+					<div class="morph-content icon-close">
+						<div>
+							<div class="content-style-overlay p_color5">
+								<span class="icon icon-close icon-close1">Close the overlay</span>
+								<div class="port_txtArea">
+									<section class="port_txt">
+										<h2>Ijam</h2>
+										<p class="port_field">Web Design + Publishing</p>
+										<p class="port_info">가구업체 홈페이지 브랜드 홈페이지가 아닌 카페24솔루션을 사용하여 만든 홈페이지<br/>
+										기존 솔루션을 해당 업체에 맞게끔 수정하여 작업하였습니다.</p>
+										<p class="port_viewBtn"><a href="https://web.archive.org/web/20211229061723/http://itop2.cafe24.com/" target="_blank">SITE VIEW</a></p>
+									</section>
+								</div>
+
+								<p><img src="img/portfolio/port5_1.png" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port5_2.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port5_3.jpg" style="width:100%;" alt=""/></p>
+
+								<div class="port_bottom_btn">
+									<div class="port_viewBtn2"><a href="https://web.archive.org/web/20211229061723/http://itop2.cafe24.com/" target="_blank">SITE VIEW</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li>
+				<div class="morph-button morph-button-overlay morph-button-fixed">
+					<figure class="effect-bubba">
+						<img src="img/main/main_port6.jpg" alt="">
+						<figcaption>
+							<h2>어반힐스</h2>
+							<p>Design</p>
+						</figcaption>			
+					</figure>
+					<div class="morph-content icon-close">
+						<div>
+							<div class="content-style-overlay p_color6">
+								<span class="icon icon-close icon-close1">Close the overlay</span>
+								<div class="port_txtArea">
+									<section class="port_txt">
+										<h2>어반힐스</h2>
+										<p class="port_field">Web Design</p>
+										<p class="port_info">처음 디자인 구성해본 페럴렉스 방식의 풀페이지 홈페이지<br/>
+										스크롤의 위치에 따라 다양한 컨텐츠가 움직이는 홈페이지로 모던한 디자인에 깔끔하게 디자인 하였습니다.<br/>
+										풀페이지+테블릿 홈페이지를 디자인 제작 하였습니다.</p>
+										<p class="port_viewBtn"><a href="https://web.archive.org/web/20211229061723/http://w.urbanhills.co.kr/fhtml/" target="_blank">SITE VIEW</a></p>
+									</section>
+								</div>
+
+								<p><img src="img/portfolio/port6_1.png" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port6_2.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port6_3.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port6_4.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port6_5.jpg" style="width:100%;" alt=""/></p>
+
+								<div class="port_bottom_btn">
+									<div class="port_viewBtn2"><a href="https://web.archive.org/web/20211229061723/http://w.urbanhills.co.kr/fhtml/" target="_blank">SITE VIEW</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li>
+				<div class="morph-button morph-button-overlay morph-button-fixed">
+					<figure class="effect-bubba">
+						<img src="img/main/main_port7.jpg" alt="">
+						<figcaption>
+							<h2>나눔펜션</h2>
+							<p>Design</p>
+						</figcaption>			
+					</figure>
+					<div class="morph-content icon-close">
+						<div>
+							<div class="content-style-overlay p_color7">
+								<span class="icon icon-close icon-close1">Close the overlay</span>
+								<div class="port_txtArea">
+									<section class="port_txt">
+										<h2>나눔펜션</h2>
+										<p class="port_field">Web Design</p>
+										<p class="port_info">플래시 홈페이지를 풀페이지 형태로 리뉴얼한 홈페이지<br/>
+										기존 플래시 홈페이지의 다양한 에니메이션 효과를 원했기에 페이지 마다<br/>
+										다양한 에니메이션 효과를 두어 역동성있게 디자인 작업 하였습니다.</p>
+										<p class="port_viewBtn"><a href="https://web.archive.org/web/20211229061723/http://www.nanum-pension.co.kr/fhtml/" target="_blank">SITE VIEW</a></p>
+									</section>
+								</div>
+
+								<p><img src="img/portfolio/port7_1.png" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port7_2.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port7_3.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port7_4.jpg" style="width:100%;" alt=""/></p>
+
+								<div class="port_bottom_btn">
+									<div class="port_viewBtn2"><a href="https://web.archive.org/web/20211229061723/http://www.nanum-pension.co.kr/fhtml/" target="_blank">SITE VIEW</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li>
+				<div class="morph-button morph-button-overlay morph-button-fixed">
+					<figure class="effect-bubba">
+						<img src="img/main/main_port8.jpg" alt="">
+						<figcaption>
+							<h2>오사랑 펜션</h2>
+							<p>Design</p>
+						</figcaption>			
+					</figure>
+					<div class="morph-content icon-close">
+						<div>
+							<div class="content-style-overlay p_color8">
+								<span class="icon icon-close icon-close1">Close the overlay</span>
+								<div class="port_txtArea">
+									<section class="port_txt">
+										<h2>오사랑 펜션</h2>
+										<p class="port_field">Web Design</p>
+										<p class="port_info">러블리하고 한권의 잡지책 같은 느낌으로 컨셉을 잡고 작업하였습니다.<br/>
+										중간중간 애니메이션 효과를 주어 페이지 넘어갈때의 역동성있는 디자인을 추가하였습니다.</p>
+										<p class="port_viewBtn"><a href="https://web.archive.org/web/20211229061723/http://w.oh-love.co.kr/fhtml/" target="_blank">SITE VIEW</a></p>
+									</section>
+								</div>
+
+								<p><img src="img/portfolio/port8_1.png" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port8_2.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port8_3.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port8_4.jpg" style="width:100%;" alt=""/></p>
+
+								<div class="port_bottom_btn">
+									<div class="port_viewBtn2"><a href="https://web.archive.org/web/20211229061723/http://w.oh-love.co.kr/fhtml/" target="_blank">SITE VIEW</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+
+			<li>
+				<div class="morph-button morph-button-overlay morph-button-fixed">
+					<figure class="effect-bubba">
+						<img src="img/main/main_port9.jpg" alt="">
+						<figcaption>
+							<h2>여수밤바다</h2>
+							<p>Design</p>
+						</figcaption>			
+					</figure>
+					<div class="morph-content icon-close">
+						<div>
+							<div class="content-style-overlay p_color9">
+								<span class="icon icon-close icon-close1">Close the overlay</span>
+								<div class="port_txtArea">
+									<section class="port_txt">
+										<h2>여수밤바다</h2>
+										<p class="port_field">Web Design</p>
+										<p class="port_info">풀페이지 형태로 디자인 작업한 홈페이지 모던하고 감성적인 느낌으로 디자인 하였습니다.<br/>
+										한페이지 마다의 디자인 요소를 두어 작업했고, 사진에 방해 주지 않도록 편집디자인에 노력을 하였습니다.</p>
+										<p class="port_viewBtn"><a href="https://web.archive.org/web/20211229061723/http://w.yeosubam.co.kr/fhtml/" target="_blank">SITE VIEW</a></p>
+									</section>
+								</div>
+
+								<p><img src="img/portfolio/port9_1.png" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port9_2.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port9_3.jpg" style="width:100%;" alt=""/></p>
+
+								<div class="port_bottom_btn">
+									<div class="port_viewBtn2"><a href="https://web.archive.org/web/20211229061723/http://w.yeosubam.co.kr/fhtml/" target="_blank">SITE VIEW</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li>
+				<div class="morph-button morph-button-overlay morph-button-fixed">
+					<figure class="effect-bubba">
+						<img src="img/main/main_port10.jpg" alt=""/>
+						<figcaption>
+							<h2>보보펜션</h2>
+							<p>Design</p>
+						</figcaption>			
+					</figure>
+					<div class="morph-content icon-close">
+						<div>
+							<div class="content-style-overlay p_color1">
+								<span class="icon icon-close icon-close1">Close the overlay</span>
+								<div class="port_txtArea">
+									<section class="port_txt">
+										<h2>보보펜션</h2>
+										<p class="port_field">Web Design</p>
+										<p class="port_info">플래시, 테블릿 두가지 홈페이지 디자인 작업 화이트톤을 주어 깔끔한 느낌으로 작업 하였고<br/>
+										페이지마다 다른느낌의 디자인 형태로 홈페이지의 지루함이 없는 디자인 컨셉입니다.<br/>
+										딱딱한 느낌보다는 세련되고 활동감있는 디자인에 중점을 두고 디자인하였습니다.</p>
+										<p class="port_viewBtn"><a href="https://web.archive.org/web/20211229061723/http://w.bobohouse.co.kr/fhtml/" target="_blank">SITE VIEW</a></p>
+									</section>
+								</div>
+
+								<p><img src="img/portfolio/port10_1.png" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port10_2.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port10_3.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port10_4.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port10_5.jpg" style="width:100%;" alt=""/></p>
+
+								<div class="port_bottom_btn">
+									<div class="port_viewBtn2"><a href="https://web.archive.org/web/20211229061723/http://w.bobohouse.co.kr/fhtml/" target="_blank">SITE VIEW</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li>
+				<div class="morph-button morph-button-overlay morph-button-fixed">
+					<figure class="effect-bubba">
+						<img src="img/main/main_port11.jpg" alt=""/>
+						<figcaption>
+							<h2>바토리조트</h2>
+							<p>Design</p>
+						</figcaption>			
+					</figure>
+					<div class="morph-content icon-close">
+						<div>
+							<div class="content-style-overlay p_color6">
+								<span class="icon icon-close icon-close1">Close the overlay</span>
+								<div class="port_txtArea">
+									<section class="port_txt">
+										<h2>바토리조트</h2>
+										<p class="port_field">Web Design</p>
+										<p class="port_info">플래시 + 테블릿 디자인 작업한 홈페이지 고급스러운 느낌으로 컨셉을 마추고<br/>
+										플래시홈페이지와 테블릿 홈페이지 간에 디자인의 변동이 없이 작업하였습니다.</p>
+										<p class="port_viewBtn"><a href="https://web.archive.org/web/20211229061723/http://w.batopension.co.kr/fhtml/" target="_blank">SITE VIEW</a></p>
+									</section>
+								</div>
+
+								<p><img src="img/portfolio/port11_1.png" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port11_2.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port11_3.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port11_4.jpg" style="width:100%;" alt=""/></p>
+
+								<div class="port_bottom_btn">
+									<div class="port_viewBtn2"><a href="https://web.archive.org/web/20211229061723/http://w.batopension.co.kr/fhtml/" target="_blank">SITE VIEW</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li>
+				<div class="morph-button morph-button-overlay morph-button-fixed">
+					<figure class="effect-bubba">
+						<img src="img/main/main_port12.jpg" alt=""/>
+						<figcaption>
+							<h2>가람리조트</h2>
+							<p>Design</p>
+						</figcaption>			
+					</figure>
+					<div class="morph-content icon-close">
+						<div>
+							<div class="content-style-overlay p_color12">
+								<span class="icon icon-close icon-close1">Close the overlay</span>
+								<div class="port_txtArea">
+									<section class="port_txt">
+										<h2>가람리조트</h2>
+										<p class="port_field">Web Design</p>
+										<p class="port_info">플래시 홈페이지 디자인 작업.<br/>
+										객실 수가 많은 리조트라 룸안내에 대한 정보전달에 신경을 많이 쓴 작업이였습니다.<br/>
+										리조트 전경은 스케치업파일을 3D렌더링 하여 입체감 있게 나타내었고 고급스런 느낌으로 디자인하였습니다.</p>
+										<p class="port_viewBtn"><a href="https://web.archive.org/web/20211229061723/http://w.garamvalley.co.kr/fhtml/" target="_blank">SITE VIEW</a></p>
+									</section>
+								</div>
+
+								<p><img src="img/portfolio/port12_1.png" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port12_2.jpg" style="width:100%;" alt=""/></p>
+								<p><img src="img/portfolio/port12_3.jpg" style="width:100%;" alt=""/></p>
+
+								<div class="port_bottom_btn">
+									<div class="port_viewBtn2"><a href="https://web.archive.org/web/20211229061723/http://w.garamvalley.co.kr/fhtml/" target="_blank">SITE VIEW</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+
+
+		</ul>
+	</section>
+
+	<script>
+		(function() {	
+			var docElem = window.document.documentElement, didScroll, scrollPosition;
+
+			// trick to prevent scrolling when opening/closing button
+			function noScrollFn() {
+				window.scrollTo( scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0 );
+			}
+
+			function noScroll() {
+				window.removeEventListener( 'scroll', scrollHandler );
+				window.addEventListener( 'scroll', noScrollFn );
+			}
+
+			function scrollFn() {
+				window.addEventListener( 'scroll', scrollHandler );
+			}
+
+			function canScroll() {
+				window.removeEventListener( 'scroll', noScrollFn );
+				scrollFn();
+			}
+
+			function scrollHandler() {
+				if( !didScroll ) {
+					didScroll = true;
+					setTimeout( function() { scrollPage(); }, 60 );
+				}
+			};
+
+			function scrollPage() {
+				scrollPosition = { x : window.pageXOffset || docElem.scrollLeft, y : window.pageYOffset || docElem.scrollTop };
+				didScroll = false;
+			};
+
+			scrollFn();
+			
+			//var el = document.querySelector( '.morph-button' );
+			
+			var el = document.querySelectorAll( '.morph-button' );
+			
+			
+			for(var i=0; i<el.length; i++) {
+				new UIMorphingButton( el[i], {
+				closeEl : '.icon-close',
+				onBeforeOpen : function() {
+					// don't allow to scroll
+					noScroll();
+				},
+				onAfterOpen : function() {
+					// can scroll again
+					canScroll();
+					
+					// add class "noscroll" to body
+					classie.addClass( document.body, 'noscroll' );
+					// add scroll class to main el
+					//classie.addClass( el[i], 'scroll' );
+					$(".morph-content").css("overflow-y","auto")
+				},
+				onBeforeClose : function() {
+					
+					// remove class "noscroll" to body
+					classie.removeClass( document.body, 'noscroll' );
+					// remove scroll class from main el
+					//classie.removeClass( el[i], 'scroll' );
+					// don't allow to scroll
+					$(".morph-content").css("overflow-y","hidden")
+					noScroll();
+				},
+				onAfterClose : function() {
+					// can scroll again
+					canScroll();
+				}
+			} );
+    		}
+			
+		})();
+	</script>
+	
+
+
+<!---------------------------------------------- 반응형 컨텐츠 -------------------------------------------------->
+	<div class="title_a">
+		<div class="main_title" data-section="3" data-animation-container>
+			<h2 data-animation="fadeInUp">RESPONSIVE WEB</h2>
+			<p class="title_s" data-animation="fadeInUp" data-animation-delay="300ms">반응형 홈페이지 [모루컴퍼니 대표 홈페이지] 제작</p>
+			<span data-animation="fadeInUp" data-animation-delay="500ms"></span>
+			<p class="title_viewBtn" data-animation="fadeInUp" data-animation-delay="700ms"><a href="https://web.archive.org/web/20211229061723/http://morucompany.com/homepage/" target="_blank">SITE VIEW</a></p>
+		</div>
+	</div>
+
+	<section class="main_responsive" data-animation-container>
+		<div class="responsive_area">
+			<p class="responsive_T" data-animation="fadeInUp"><img src="img/main/main_responsive_temp.png" alt="템플릿"/></p>
+			<p class="responsive_M" data-animation="fadeInUp" data-animation-delay="500ms"><img src="img/main/main_responsive_mobi.png" alt="모바일"/></p>
+		</div>
+	</section>
+
+
+
+
+
+
+
+<!---------------------------------------------- 모바일 컨텐츠 -------------------------------------------------->
+	<!-- <div class="title_a">
+		<div class="main_title" data-section="4">
+			<h2>MOBILE</h2>
+			<p class="title_s">모바일 전용 홈페이지 [에넥스키친 NFC정품인증] 제작</p>
+			<span></span>
+			<p class="title_viewBtn"><a href="http://kitchen.enex.co.kr/manage/" target="_blank">SITE VIEW</a></p>
+		</div>
+	</div> -->
+
+	<!-- <section class="main_mobile">
+		<div class="slider4">
+			<div class="slide"><img src="img/main/main_mobile_slide1.jpg" alt="모바일 사이트 이미지1"></div>
+			<div class="slide"><img src="img/main/main_mobile_slide2.jpg" alt="모바일 사이트 이미지2"></div>
+			<div class="slide"><img src="img/main/main_mobile_slide3.jpg" alt="모바일 사이트 이미지3"></div>
+			<div class="slide"><img src="img/main/main_mobile_slide4.jpg" alt="모바일 사이트 이미지4"></div>
+			<div class="slide"><img src="img/main/main_mobile_slide5.jpg" alt="모바일 사이트 이미지5"></div>
+		</div>
+		<div class="mobile_handArea">
+			<p class="mobile_hand1"><img src="img/main/main_mobile_hand1.png" alt="핸드폰 손1"></p>
+			<p class="mobile_hand2"><img src="img/main/main_mobile_hand2.png" alt="핸드폰 손2"></p>
+		</div>
+	</section> -->
+
+
+
+
+
+
+<!---------------------------------------------- 어바웃 컨텐츠 -------------------------------------------------->
+	<section class="main_about" data-section="5" data-animation-container>
+		<div class="about" style="">
+			<div class="about_photo" alt=""><img src="img/main/main_me.jpg" alt="소개사진"/></div>
+			<div class="about_txt">
+				<h4>PROFILE</h4>
+				<p class="mb20">최주영 CHOI JU_YOUNG<br/>
+				1987 / 03 / 25<br/>
+				hani_c@naver.com</p>
+
+				<!-- <p>
+				- JOYHOMME(남성의류 쇼핑몰) 웹디자인<br/>
+				- I.net(웹 에이젼시) 웹디자인<br/>
+				- 모바일웹&퍼블리싱 교육 이수<br/>
+				- 모루컴퍼니(IT팀) 퍼블리싱 & 웹디자인
+				</p> -->
+			</div>
+
+			<h3 class="about_title" data-animation="fadeInUp">CHOI<br/>
+			JU-YOUNG<br/>
+			PUBLISHER<br/>
+			DESIGNER</h3>
+		</div>
+	</section>
+
+
+
+
+
+
+<!---------------------------------------------- 하단 -------------------------------------------------->
+	<section class="footer_logo">
+		<p><img src="img/main/f_logo.png" data-button="1" alt="하단로고"/></p>
+	</section>
+	<section class="footer_by"><p>ⓒ HANI.C. 2016 All Rights Reserved.</p></section>
+
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	(function(){
+        var $containers = $('[data-animation]:not([data-animation-child]), [data-animation-container]');
+        $containers.scrollAnimations();
+    }());
+});
+</script>
+
+
+
+</body>
+</html>
+
