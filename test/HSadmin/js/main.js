@@ -513,6 +513,120 @@ window.gotoPageUrl = function(catId, itemId, pageId, extra){
     }
 };
 
+
+/** 메뉴 > 페이지 이동시에도 파라미터값 붙기 */
+// window.gotoPageUrl = function(catId, itemId, pageId, extra){
+//     if (!menuLoaded){
+//         pendingNavigations.push([catId, itemId, pageId, extra]);
+//         return;
+//     }
+
+//     // pageId만 넘어왔을 경우 역추적
+//     if (pageId && !itemId){
+//         const ref = menuIndex.pages[pageId];
+//         if (ref){
+//             itemId = ref.itemId;
+//             catId = ref.catId;
+//         }
+//     }
+
+//     const cat = menuIndex.categories[catId];
+//     if (!cat){
+//         console.warn('Invalid catId:', catId);
+//         return;
+//     }
+
+//     const catChanged = currentState.catId !== catId;
+
+//     if ($('.main_cont').length){
+//         $('.main_cont').remove();
+//     }
+//     ensureLayoutElements();
+
+//     if (catChanged){
+//         renderSideMenuByCatId(catId);
+//         currentState.itemId = null;
+//         currentState.pageId = null;
+//         currentState.urlExtra = null;
+//     }
+
+//     currentState.catId = catId;
+//     if (itemId) currentState.itemId = itemId;
+//     if (pageId) currentState.pageId = pageId;
+
+//     // extra 명시적으로 전달되었을 때만 기록 (undefined 이면 null)
+//     if (arguments.length >= 4){
+//         currentState.urlExtra = extra;
+//     } else {
+//         currentState.urlExtra = null;
+//     }
+
+//     // item/page 자동 보정
+//     if (!currentState.itemId && Array.isArray(cat.items)){
+//         const firstItem = cat.items.find(i => !i.hidden);
+//         if (firstItem){
+//             currentState.itemId = firstItem.itemId;
+//         }
+//     }
+//     if (currentState.itemId && !currentState.pageId){
+//         const itemObj = menuIndex.items[currentState.itemId]?.item;
+//         const firstPage = findFirstDisplayablePage(itemObj);
+//         if (firstPage){
+//             currentState.pageId = firstPage.pageId;
+//         }
+//     }
+
+//     let pageObj = null;
+//     if (currentState.pageId){
+//         pageObj = menuIndex.pages[currentState.pageId]?.page;
+//     } else if (cat.url && !cat.items){
+//         pageObj = { url: cat.url, label: cat.category, external: !!cat.external };
+//     }
+
+//     if (pageObj){
+//         openPageObject(pageObj);
+//     }
+
+//     updateBreadcrumb();
+//     applyActiveStates();
+
+//     // 새 로직: catId/itemId/pageId 있으면 항상 표준 쿼리 부여
+//     if (currentState.catId && currentState.itemId && currentState.pageId){
+//         const qs = buildStandardQuery(
+//             currentState.catId,
+//             currentState.itemId,
+//             currentState.pageId,
+//             currentState.urlExtra
+//         );
+//         const newUrl = location.pathname + qs;
+//         const stateData = {
+//             catId: currentState.catId,
+//             itemId: currentState.itemId,
+//             pageId: currentState.pageId,
+//             extra: currentState.urlExtra
+//         };
+
+//         // 중복 push 방지(같은 URL이면 replace 로 치환하거나 skip) - 선택
+//         if (newUrl === location.pathname + location.search){
+//             // 같은 주소라면 굳이 push 안 하고 replace 로 덮기만
+//             history.replaceState(stateData, '', newUrl);
+//         } else {
+//             if (URL_PARAM_POLICY.usePushState){
+//                 history.pushState(stateData, '', newUrl);
+//             } else {
+//                 history.replaceState(stateData, '', newUrl);
+//             }
+//         }
+//     } else {
+//         // (이 경우는 사실상 메인 페이지 전환일 가능성 높음)
+//         if (location.search){
+//             history.replaceState(null, '', location.pathname);
+//         }
+//     }
+// };
+
+
+
 /************************************************************
  * popstate 처리 (뒤/앞 이동 지원) - 선택 기능
  * 작동 안됨
